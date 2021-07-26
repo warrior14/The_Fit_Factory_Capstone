@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+}
+  
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+    text-align: center;
+}
+  
+.active {
+    background-color: rgb(199, 187, 187);
+    border-radius: 100px;
+}
+
+.active:hover {
+    background-color: goldenrod;
+}
+
+.navbar__link {
+    color: black;
+}
+
+.navbar__link:hover {
+    color: gold;
+}
