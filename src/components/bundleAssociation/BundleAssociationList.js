@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
 import { BundleAssociationContext } from "./BundleAssociationProvider.js";
 import { BundleAssociationCard } from "./BundleAssociationCard.js";
 
@@ -7,7 +6,6 @@ import { BundleAssociationCard } from "./BundleAssociationCard.js";
 export const BundleAssociationList = () => {
 
   const { bundleAssociationExercises, getBundleAssociationExercises } = useContext(BundleAssociationContext)
-
 
   useEffect(() => {
     
@@ -18,7 +16,6 @@ export const BundleAssociationList = () => {
   return (
     <>
       <h1 className="bundleHeader">Workout Bundles</h1>
-    
 
       <div>
         
