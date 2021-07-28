@@ -7,7 +7,7 @@ export const Home = () => (
     <>
         <div className="home_div">
             <h2 className="header">Welcome To The Fit Factory!</h2>
-            <small className="slogan">Witness The Fitness!</small>
+            <h4 className="slogan">Where You Can Witness The Fitness!</h4>
             {/* <UserWelcome yourName={"Luke Madrazo"} /> */}
         </div>
     </>
