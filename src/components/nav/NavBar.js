@@ -48,13 +48,13 @@ export const NavBar = () => {
                 onClick={() => setIsActive("workoutBundles")}>
                 <Link className="navbar__link" to="/workoutBundles">Workout Bundles</Link>
             </li>
-            <li className={`navbar__item ${checkNavState("legs")}`}
-                onClick={() => setIsActive("legs")}>
-                <Link className="navbar__link" to="/legs">Legs</Link>
+            <li className={`navbar__item ${checkNavState("leg")}`}
+                onClick={() => setIsActive("leg")}>
+                <Link className="navbar__link" to="/leg">Legs</Link>
             </li>
-            <li className={`navbar__item ${checkNavState("arms")}`}
-                onClick={() => setIsActive("arms")}>
-                <Link className="navbar__link" to="/arms">Arms</Link>
+            <li className={`navbar__item ${checkNavState("arm")}`}
+                onClick={() => setIsActive("arm")}>
+                <Link className="navbar__link" to="/arm">Arms</Link>
             </li>
             <li className={`navbar__item ${checkNavState("chest")}`}
               onClick={() => setIsActive("chest")}>

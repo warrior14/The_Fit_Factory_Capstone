@@ -53,8 +53,8 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>"We Are The Sheep And Joe Is Our Shepherd!"</h1>
-                    <h2>Please Sign In</h2>
+                    <h1>"We Are The Sheep And Joe Is Our Shepherd! - Luke Madrazo"</h1>
+                    <h2>Please Sign In To The Fit Factory</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email Address </label>
                         <input type="email"
