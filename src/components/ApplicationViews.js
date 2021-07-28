@@ -9,8 +9,9 @@ import { BackProvider } from "./back/BackProvider.js";
 import { BackList } from "./back/BackList.js";
 import { ArmProvider } from "./arm/ArmProvider.js";
 import { ArmList } from "./arm/ArmList.js";
-import { BundleProvider } from "./bundle/BundleProvider.js";
-import { BundleList } from "./bundle/BundleList.js"
+import { BundleAssociationProvider } from "./bundleAssociation/BundleAssociationProvider.js";
+import { BundleAssociationList } from "./bundleAssociation/BundleAssociationList.js";
+import { BundleAssociationDetail } from "./bundleAssociation/BundleAssociationDetail.js";
 
 
 
@@ -54,11 +55,16 @@ export const ApplicationViews = () => {
 
 
 
-            <BundleProvider>
-                <Route exact path="/bundle">
-                    <BundleList />
+            <BundleAssociationProvider>
+                <Route exact path="/bundleAssociation">
+                    <BundleAssociationList />
                 </Route>
-            </BundleProvider>
+ 
+                <Route exact path="/bundleAssociation/detail/:bundleAssociationId(\d+)">
+                    <BundleAssociationDetail />
+                </Route>
+
+            </BundleAssociationProvider>
         </>
     )
 }
