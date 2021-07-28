@@ -15,6 +15,8 @@ import { BundleAssociationDetail } from "./bundleAssociation/BundleAssociationDe
 
 
 
+
+
  
 export const ApplicationViews = () => {
     return (
@@ -59,7 +61,7 @@ export const ApplicationViews = () => {
                 <Route exact path="/bundleAssociation">
                     <BundleAssociationList />
                 </Route>
- 
+
                 <Route exact path="/bundleAssociation/detail/:bundleAssociationId(\d+)">
                     <BundleAssociationDetail />
                 </Route>

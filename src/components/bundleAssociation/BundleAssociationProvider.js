@@ -25,7 +25,7 @@ export const BundleAssociationProvider = (props) => {
 
     const getBundleAssociationExerciseById = (id) => {
         return fetch(`http://localhost:8088/bundleAssociation/${id}?_expand=bundle&_expand=exercise`)
-        .then(res => res.json())
+        .then(res => res.json()) 
     }
 
     return (
