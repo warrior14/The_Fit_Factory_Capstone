@@ -19,11 +19,24 @@ export const BundleAssociationDetail = () => {
   }, [])
 
   return (
-    <section className="bundle">
-      <h3 className="bundle__name">{bundleAssociation.bundle?.name}</h3>
-      <div className=""></div>
-      <div className="">Exercise Name: {bundleAssociation.exercise?.name}</div>
-      <div className="">Description: {bundleAssociation.exercise?.description}</div>
-    </section>
+    <>
+        <h2>Timer Countdown:</h2>
+        <button>Start Workout</button>
+        <button>Stop Workout</button>
+        <h2>Sets:</h2>
+        <h2>Sets Time:</h2>
+        <h2>Cool Down Time:</h2>
+        <h2>Reps:</h2>
+
+        <label>Notes:</label>
+        <textarea placeholder="Type notes..."></textarea>
+
+        <section className="bundle">
+            <h3 className="bundle__name">{bundleAssociation.bundle?.name}</h3>
+            <div className=""></div>
+            <div className="">Exercise Name: {bundleAssociation.exercise?.name}</div>
+            <div className="">Description: {bundleAssociation.exercise?.description}</div>
+        </section>
+    </>
   )
 }
