@@ -21,12 +21,12 @@ export const BundleAssociationDetail = () => {
     getBundleExercises(currentBundle.id);
   }, [])
 
-  let exerciseTimerModal;
-  if (timerIsDisplayed) {
-    exerciseTimerModal = <ExerciseTimerModal />
-  } else {
-    exerciseTimerModal = null;
-  }
+  // let exerciseTimerModal;
+  // if (timerIsDisplayed) {
+  //   exerciseTimerModal = <ExerciseTimerModal />
+  // } else {
+  //   exerciseTimerModal = null;
+  // }
 
   return (
     <>
@@ -39,7 +39,7 @@ export const BundleAssociationDetail = () => {
           bundleExercises.map((exercise) => {
             return <>
                     {
-                     exerciseTimerModal
+                      timerIsDisplayed ? <ExerciseTimerModal setTimerIsDisplayed={setTimerIsDisplayed}/> : null
                     }
                     <section className="bundle"> 
                       <h3 className="">{exercise.name}</h3>
