@@ -44,9 +44,9 @@ export const NavBar = () => {
                 onClick={() => setIsActive("home")}>
                 <Link className="navbar__link" to="/">Home</Link>
             </li>
-            <li className={`navbar__item ${checkNavState("bundleAssociation")}`}
-                onClick={() => setIsActive("bundleAssociation")}>
-                <Link className="navbar__link" to="/bundleAssociation">Workout Bundles</Link>
+            <li className={`navbar__item ${checkNavState("bundleList")}`}
+                onClick={() => setIsActive("bundleList")}>
+                <Link className="navbar__link" to="/bundleList">Workout Bundles</Link>
             </li>
             <li className={`navbar__item ${checkNavState("leg")}`}
                 onClick={() => setIsActive("leg")}>

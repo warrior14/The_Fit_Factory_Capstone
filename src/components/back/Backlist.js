@@ -19,7 +19,7 @@ export const BackList = () => {
       <h1 className="backHeader">Back Exercises</h1>
     
 
-      <div className="backs">
+      <div className="back">
         
         {
             backExercises.map(exercise => {
