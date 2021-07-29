@@ -21,11 +21,8 @@ export const BackProvider = (props) => {
                 return setBackExercises(backExercises);
             })
     }
-
     return (
-        <BackContext.Provider value={{
-            backExercises, getBackExercises
-        }}>
+        <BackContext.Provider value={{backExercises, getBackExercises}}>
             {props.children}
         </BackContext.Provider>
     )

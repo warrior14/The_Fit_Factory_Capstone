@@ -16,10 +16,10 @@ export const ChestList = () => {
 
   return (
     <>
-      <h1 className="chestHeader">Chest Exercises</h1>
+      <h1 className="ChestHeader">Chest Exercises</h1>
     
 
-      <div className="chests">
+      <div className="chest">
         
         {
             chestExercises.map(exercise => {

@@ -21,11 +21,8 @@ export const ChestProvider = (props) => {
                 return setChestExercises(chestExercises);
             })
     }
-
     return (
-        <ChestContext.Provider value={{
-            chestExercises, getChestExercises
-        }}>
+        <ChestContext.Provider value={{chestExercises, getChestExercises}}>
             {props.children}
         </ChestContext.Provider>
     )

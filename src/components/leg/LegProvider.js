@@ -21,11 +21,8 @@ export const LegProvider = (props) => {
                 return setLegExercises(legExercises);
             })
     }
-
     return (
-        <LegContext.Provider value={{
-            legExercises, getLegExercises
-        }}>
+        <LegContext.Provider value={{legExercises, getLegExercises}}>
             {props.children}
         </LegContext.Provider>
     )

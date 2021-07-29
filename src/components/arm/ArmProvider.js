@@ -21,11 +21,8 @@ export const ArmProvider = (props) => {
                 return setArmExercises(armExercises);
             })
     }
-
     return (
-        <ArmContext.Provider value={{
-            armExercises, getArmExercises
-        }}>
+        <ArmContext.Provider value={{armExercises, getArmExercises}}>
             {props.children}
         </ArmContext.Provider>
     )

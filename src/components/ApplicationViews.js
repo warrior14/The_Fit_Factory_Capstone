@@ -26,47 +26,50 @@ export const ApplicationViews = () => {
             </Route>
 
 
-            <LegProvider>
-                <Route exact path="/leg">
-                    <LegList />
-                </Route>
-            </LegProvider>
-
-
-
-            <ChestProvider>
-                <Route exact path="/chest">
-                    <ChestList />
-                </Route>
-            </ChestProvider>
-
-
-            <BackProvider>
-                <Route exact path="/back">
-                    <BackList />
-                </Route>
-            </BackProvider>
-
-
-
-            <ArmProvider>
-                <Route exact path="/arm">
-                    <ArmList />
-                </Route>
-            </ArmProvider>
-
-
-
             <BundleAssociationProvider>
-                <Route exact path="/bundleAssociation">
-                    <BundleAssociationList />
-                </Route>
+                    <LegProvider>
+                        <Route exact path="/leg">
+                            <LegList />
+                        </Route>
+                    </LegProvider>
+                
+            
 
-                <Route exact path="/bundleAssociation/detail/:bundleAssociationId(\d+)">
-                    <BundleAssociationDetail />
-                </Route>
+                    <ChestProvider>
+                        <Route exact path="/chest">
+                            <ChestList />
+                        </Route>
+                    </ChestProvider>
+                
+        
+
+            
+
+                    <BackProvider>
+                        <Route exact path="/back">
+                            <BackList />
+                        </Route>
+                    </BackProvider>
+              
+
+                    <ArmProvider>
+                        <Route exact path="/arm">
+                            <ArmList />
+                        </Route>
+                    </ArmProvider>
+                
+                    <Route exact path="/bundleList">
+                        <BundleAssociationList />
+                    </Route>
+                    
+                    <Route exact path="/bundle/detail/:bundleAssociationId(\d+)">
+                        <BundleAssociationDetail />
+                    </Route>
 
             </BundleAssociationProvider>
+
+
+
         </>
     )
 }

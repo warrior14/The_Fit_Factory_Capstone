@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect } from "react";
 import { LegContext } from "./LegProvider.js";
 import { LegCard } from "./LegCard.js";
