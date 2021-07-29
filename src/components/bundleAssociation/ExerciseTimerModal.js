@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState }from "react";
 
-export const ExerciseTimerModal = () => {
+export const ExerciseTimerModal = ({setTimerIsDisplayed}) => {
+
+                    const [timerIsRunning, setTimerIsRunning ] = useState(false)
+
     return (
                     <div className="modal is-active">
                         <div className="modal-background"></div>
@@ -9,8 +12,12 @@ export const ExerciseTimerModal = () => {
                             {/* <h3 className="">{exercise.name}</h3>
                             <p className="">{exercise.description}</p> */}
                             <h1>Timer Countdown:</h1>
-                            <button>Begin</button>
-                            <button>Stop</button>
+                            <button onClick={() => {
+                                setTimerIsRunning(true)
+                            }}>Begin</button>
+                            <button onClick={() => {
+                                setTimerIsDisplayed(false)
+                            }}>Stop</button>
                             </section>
                         </div>
                         <button className="modal-close is-large" aria-label="close"></button>
