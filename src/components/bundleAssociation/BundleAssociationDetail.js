@@ -47,7 +47,6 @@ export const BundleAssociationDetail = () => {
                     </section>
                     <button onClick={() => {
                       setTimerIsDisplayed(true)
-                      console.log("timer state", timerIsDisplayed )
                     }}>Start Workout</button>
                     <h3>Sets</h3>
                     <h3>Set Time</h3>
