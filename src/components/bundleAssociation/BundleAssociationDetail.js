@@ -5,57 +5,55 @@ import { useParams } from "react-router-dom"
 import { ExerciseTimerModal } from "./ExerciseTimerModal"
 
 export const BundleAssociationDetail = () => {
+
+  useEffect(() => {
+    getBundleAssociations(currentBundle.id);
+
+  }, [])
+
   const { getBundleAssociationExerciseById, currentBundle, getBundleExercises, bundleExercises, bundleAssociations, getBundleAssociations } = useContext(BundleAssociationContext)
 
 	const [bundleAssociationExercise, setBundleAssociationExercise] = useState({})
 
 	const {bundleAssociationId} = useParams();
 
-  const [timerIsDisplayed, setTimerIsDisplayed ] = useState(false)
+  const [timerModalIsDisplayed, setTimerModalIsDisplayed ] = useState(false)
 
-  useEffect(() => {
-    // getBundleAssociationExerciseById(bundleAssociationId)
-    // .then((response) => {
-    //   setBundleAssociationExercise(response)
-    // })
-    // getBundleExercises(currentBundle.id);
-    getBundleAssociations(currentBundle.id);
-  }, [])
+  const [currentAssociation, setCurrentAssociation] = useState(JSON.parse(sessionStorage.getItem("currentAssociation")))
 
-  // let exerciseTimerModal;
-  // if (timerIsDisplayed) {
-  //   exerciseTimerModal = <ExerciseTimerModal />
-  // } else {
-  //   exerciseTimerModal = null;
-  // }
+ 
 
   return (
     <>
 
-        {/* <button onClick={() => {console.log('bundle exercises', bundleExercises)}}>console log</button> */}
+        
         
         <h1 className="">{currentBundle.name}</h1>
         {
-
+          timerModalIsDisplayed ? <ExerciseTimerModal setTimerModalIsDisplayed={setTimerModalIsDisplayed} bundle={currentAssociation} sets={currentAssociation.sets} setsTimeMinutes={currentAssociation.setsTimeMinutes} setsTimeSeconds={currentAssociation.setsTimeSeconds}
+          coolDownTimeMinutes={currentAssociation.cooldownTimeMinutes} coolDownTimeSeconds={currentAssociation.cooldownTimeSeconds}/> : null
+        }
+        {
 // change to return whole association to have access to sets, time and notes.
           bundleAssociations.map((bundleAssociation) => {
-            return <>
-                    {
-                      timerIsDisplayed ? <ExerciseTimerModal setTimerIsDisplayed={setTimerIsDisplayed}/> : null
-                    }
+            return <div onMouseOver={() => {
+              sessionStorage.setItem("currentAssociation", JSON.stringify(bundleAssociation));
+              setCurrentAssociation(bundleAssociation);
+            }}>
                     <section className="bundle"> 
                       <h3 className="">{bundleAssociation.exercise.name}</h3>
                       <p className="">{bundleAssociation.exercise.description}</p>
                     </section>
                     <button onClick={() => {
-                      setTimerIsDisplayed(true)
+                      setTimerModalIsDisplayed(true)
                     }}>Start Workout</button>
                     <h3>Sets: {bundleAssociation.sets}</h3>
-                    <h3>Set Time: {bundleAssociation.setsTime}</h3>
+                    <h3>Sets Time: {bundleAssociation.setsTimeMinutes}:{bundleAssociation.setsTimeSeconds > 10 ? bundleAssociation.setsTimeSeconds : `0${bundleAssociation.setsTimeSeconds}`}</h3>
                     <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds > 10 ? bundleAssociation.cooldownTimeSeconds : `0${bundleAssociation.cooldownTimeSeconds}`}</h3>
                     <h3>Reps: {bundleAssociation.reps}</h3>
-                    <textarea placeholder="Type Notes..."></textarea>
-                </>
+                    <textarea placeholder="Type Notes..." defaultValue={bundleAssociation.notes}></textarea>
+
+                </div>
           })
 
 

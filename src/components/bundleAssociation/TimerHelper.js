@@ -1,12 +1,13 @@
 import { speak } from "./SpeechHelper";
 
-export let timer = (sets, setNewTime, setTimeoutState, setTimeoutHandleState, setTimeoutCooldownState, setTimeoutCooldownHandleState) => {
+export let timer = (sets, setsTimeMinutes, setsTimeSeconds, coolDownTimeMinutes, coolDownTimeSeconds ,setNewTime, setTimeoutState, setTimeoutHandleState, setTimeoutCooldownState, setTimeoutCooldownHandleState) => {
     sets--
     let timeout;
     let timeoutHandle;
     let timeoutCoolDownHandle;
     let timeoutCoolDown;
     // This is the resting time function, is in charge of giving the user a break after completing a set
+
     // the time for this is set by the user in the exercise card.
     let countdownRestTime = (minutesCD, secondsCD, minutesT, seconds) => {
         let coolDownTick = () => {
@@ -45,7 +46,8 @@ export let timer = (sets, setNewTime, setTimeoutState, setTimeoutHandleState, se
     // This function is in charge of counting down, it accepts two parameters of minutes and seconds
     let countdownMinutesAndSeconds = (minutes, seconds) => {
         // let startingMinutes = setTimeInput.value;
-        let startingMinutes = 3;
+        console.log("minues", minutes, "seconds", seconds, "cooldown minutes", coolDownTimeMinutes , "cooldown seconds", coolDownTimeSeconds)
+        let startingMinutes = setsTimeMinutes;
         let minutesAndSecondsTick = () => {
           
             let newTime = minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
@@ -66,12 +68,13 @@ export let timer = (sets, setNewTime, setTimeoutState, setTimeoutHandleState, se
                     // when there are 0 more minutes but seconds left this section is triggered
                     if (sets === 0) {
                         speak("Workout Finished, GREAT JOB!", "en-GB", 0.6)
+                        setNewTime("");
                     } else {
                         speak("Set Complete", "en-GB", 0.6)
                         minutes = startingMinutes;
                         timeout = setTimeout(() => {
                             speak("Cool down start", "en-GB");
-                            countdownRestTime(1, 0, minutes, seconds);
+                            countdownRestTime(coolDownTimeMinutes, coolDownTimeSeconds, minutes, seconds);
                         }, 1000);
                         setTimeoutState(timeout)
                         sets--
@@ -85,7 +88,7 @@ export let timer = (sets, setNewTime, setTimeoutState, setTimeoutHandleState, se
     let functions = {
             start: () => {
                 speak("Workout Begin", "en-GB");
-                countdownMinutesAndSeconds(1, 0)
+                countdownMinutesAndSeconds(setsTimeMinutes, setsTimeSeconds)
             },
             stop: () => {
                 speak("Workout Finished", "en-GB");
