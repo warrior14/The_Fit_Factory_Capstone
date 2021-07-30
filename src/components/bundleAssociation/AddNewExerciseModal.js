@@ -20,9 +20,9 @@ export const AddExerciseModal = ({setShowModal}) => {
           <div className="modal-background"></div>
           <div className="modal-content">
             <h1>Add This Exercise To A Bundle!</h1>
-            <input type="number" placeholder="asd"/>
-            <input type="number" placeholder="asd"/>
-            <input type="number" placeholder="asd"/>
+            <input type="number" placeholder="Amount Of Sets"/>
+            <input type="number" placeholder="Sets Time"/>
+            <input type="number" placeholder="Cool Down Time"/>
             <textarea placeholder="" defaultValue="Notes..."></textarea>
             <select onChange={(event) => {
               console.log(event.target.value)

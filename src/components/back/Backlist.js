@@ -1,11 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BackContext } from "./BackProvider.js";
 import { BackCard } from "./BackCard.js";
+import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
+
 
 
 export const BackList = () => {
 
   const { backExercises, getBackExercises } = useContext(BackContext)
+
+
+  const [showModal, setShowModal] = useState(false)
 
 
   useEffect(() => {
@@ -14,8 +19,22 @@ export const BackList = () => {
 
   }, [])
 
+
+  let exerciseModal;
+  if (showModal) {    
+    exerciseModal = <AddExerciseModal setShowModal={setShowModal}/>
+  } else {
+    exerciseModal = null;
+  }
+
+
+
   return (
     <>
+
+      {exerciseModal}
+
+
       <h1 className="backHeader">Back Exercises</h1>
     
 
@@ -23,7 +42,7 @@ export const BackList = () => {
         
         {
             backExercises.map(exercise => {
-            return <BackCard key={exercise.id} exercise={exercise} />
+            return <BackCard key={exercise.id} exercise={exercise} setShowModal={setShowModal}/>
           })
         }
 

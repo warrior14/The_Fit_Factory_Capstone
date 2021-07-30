@@ -1,11 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ChestContext } from "./ChestProvider.js";
 import { ChestCard } from "./ChestCard.js";
+import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 
 
 export const ChestList = () => {
 
   const { chestExercises, getChestExercises } = useContext(ChestContext)
+
+  const [showModal, setShowModal] = useState(false)
 
 
   useEffect(() => {
@@ -14,8 +17,24 @@ export const ChestList = () => {
 
   }, [])
 
+
+
+  
+  let exerciseModal;
+  if (showModal) {    
+    exerciseModal = <AddExerciseModal setShowModal={setShowModal}/>
+  } else {
+    exerciseModal = null;
+  }
+
+
+
   return (
     <>
+
+
+  {exerciseModal}
+
       <h1 className="ChestHeader">Chest Exercises</h1>
     
 
@@ -23,7 +42,7 @@ export const ChestList = () => {
         
         {
             chestExercises.map(exercise => {
-            return <ChestCard key={exercise.id} exercise={exercise} />
+            return <ChestCard key={exercise.id} exercise={exercise} setShowModal={setShowModal}/>
           })
         }
 
