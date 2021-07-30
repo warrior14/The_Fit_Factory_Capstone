@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Home.css" 
 
 
 
@@ -10,7 +10,7 @@ export const Home = () => (
             <h3 className="slogan">Where You Can Witness The Fitness!</h3>
         </div>
         <div>
-            <h4>Tips On Weight Training</h4>
+            <h4 className="tips">Tips On Weight Training</h4>
             <ul>
                 <li>BREATHE : You might be tempted to hold your breath while you're lifting weights. Don't hold your breath. Instead, breathe out as you lift the weight and breathe in as you lower the weight.</li>
                 <li>SEEK BALANCE : Work all of your major muscles — including the abdomen, hips, legs, chest, back, shoulders and arms. Strengthen the opposing muscles in a balanced way, such as the fronts and backs of the arms.</li>
