@@ -14,6 +14,7 @@ export const BundleAssociationProvider = (props) => {
     const [bundleExercises, setBundleExercises] = useState([])
     const [bundleAssociations, setBundleAssociation] = useState([])
 
+    // doing the same thing as another methods see getBundleAssociations
     const getBundleAssociationExercises = () => {
         return fetch("http://localhost:8088/bundleAssociation?_expand=bundle&_expand=exercise")
             .then(res => res.json())
@@ -54,6 +55,18 @@ export const BundleAssociationProvider = (props) => {
             return setUserBundleList(bundleUser)
         })
     }
+
+    const addNewBundle = (body) => {
+        return fetch("http://localhost:8088/bundles ", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+        .then(getUserBundles)
+    };
+
 
     const addExerciseToBundle = (body) => {
         return fetch("http://localhost:8088/bundleAssociation", {
@@ -99,12 +112,13 @@ export const BundleAssociationProvider = (props) => {
         })
     }
 
+ 
 
     return (
         <BundleAssociationContext.Provider value={{
             bundleAssociationExercises, getBundleAssociationExercises, getBundleAssociationExerciseById,
              addExerciseToBundle, getAllBundles, getUserBundles, userBundleList, logCurrentBundle, currentBundle, getBundleExercises,
-              bundleExercises, getBundleAssociations, bundleAssociations
+              bundleExercises, getBundleAssociations, bundleAssociations, addNewBundle
         }}>
             {props.children}
         </BundleAssociationContext.Provider>

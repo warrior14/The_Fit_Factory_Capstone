@@ -4,7 +4,7 @@ import "./Arm.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
 
 
-export const ArmCard = ({exercise}) => {
+export const ArmCard = ({exercise, setShowModal}) => {
 
     const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
 
@@ -25,22 +25,13 @@ export const ArmCard = ({exercise}) => {
                 bundleId: parseInt(bundleState.id),
                 exerciseId: exercise.id
             };
-            addExerciseToBundle(newAssociation);
-            alert(`${exercise.name} Added to ${bundleState.name} bundle`)
+            // addExerciseToBundle(newAssociation);
+            // alert(`${exercise.name} Added to ${bundleState.name} bundle`)
+            setShowModal(true)
         }}>
                 Add Exercise
         </button>
-        <select onChange={(event) => {
 
-                console.log(event.target.value)
-                setBundleState(JSON.parse(event.target.value));
-        }} name="arms" id="armsSelect">
-                <option>Select A Bundle</option>
-               { 
-                userBundleList.map(bundle => {return <option value={JSON.stringify(bundle)}>{bundle.name}</option>}) 
-               }
-
-        </select>
         </section>
 )}
 

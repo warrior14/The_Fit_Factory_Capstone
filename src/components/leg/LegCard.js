@@ -10,6 +10,8 @@ export const LegCard = ({exercise}) => {
 
     const [ bundleIdState, setBundleIdState ] = useState({}) 
 
+    const [showLegMondal, setShowLegModal] = useState({})
+
     useEffect(() => {
         getUserBundles();
     }, [])
