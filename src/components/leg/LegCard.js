@@ -19,7 +19,7 @@ export const LegCard = ({exercise}) => {
         <h3 className="leg__name">{exercise.name}</h3>
         <p className="leg__name">{exercise.description}</p>
         <p className="leg__name">Category: {exercise.muscleCategory.name}</p>
-        <button onClick={() => { 
+        <button className="legButton" onClick={() => { 
             console.log('exercise', exercise)
             let newAssociation = {
                 bundleId: parseInt(bundleIdState),

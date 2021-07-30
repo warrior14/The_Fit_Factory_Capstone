@@ -19,7 +19,7 @@ export const BackCard = ({exercise}) => {
         <h3 className="back__name">{exercise.name}</h3>
         <p className="back__name">{exercise.description}</p>
         <p className="back__name">Category: {exercise.muscleCategory.name}</p>
-        <button onClick={() => { 
+        <button className="backButton" onClick={() => { 
             console.log('exercise', exercise)
             let newAssociation = {
                 bundleId: parseInt(bundleIdState),
