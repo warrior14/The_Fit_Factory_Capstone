@@ -12,7 +12,7 @@ export const BundleAssociationProvider = (props) => {
     const [userBundleList, setUserBundleList ] = useState([])
     const [currentBundle, setCurrentBundle] = useState({})
     const [bundleExercises, setBundleExercises] = useState([])
-   
+    const [bundleAssociations, setBundleAssociation] = useState([])
 
     const getBundleAssociationExercises = () => {
         return fetch("http://localhost:8088/bundleAssociation?_expand=bundle&_expand=exercise")
@@ -86,12 +86,25 @@ export const BundleAssociationProvider = (props) => {
         })
     }
 
+    const getBundleAssociations = (bundleId) => {
+        return fetch("http://localhost:8088/bundleAssociation?_expand=exercise")
+        .then(res => res.json())
+        .then((allBundleAssociations) => {
+            let bundleAssociations = allBundleAssociations.filter((association) => {
+                if (bundleId === association.bundleId) {
+                    return association
+                }
+            })    
+            return setBundleAssociation(bundleAssociations)
+        })
+    }
+
 
     return (
         <BundleAssociationContext.Provider value={{
             bundleAssociationExercises, getBundleAssociationExercises, getBundleAssociationExerciseById,
              addExerciseToBundle, getAllBundles, getUserBundles, userBundleList, logCurrentBundle, currentBundle, getBundleExercises,
-              bundleExercises
+              bundleExercises, getBundleAssociations, bundleAssociations
         }}>
             {props.children}
         </BundleAssociationContext.Provider>
