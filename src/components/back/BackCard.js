@@ -4,7 +4,7 @@ import "./Back.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
 
 
-export const BackCard = ({exercise}) => {
+export const BackCard = ({exercise, setShowModal}) => {
 
     const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
 
@@ -26,20 +26,10 @@ export const BackCard = ({exercise}) => {
                 exerciseId: exercise.id
             };
             addExerciseToBundle(newAssociation);
+            setShowModal(true)
         }}>
                 Add Exercise
         </button>
-        <select onChange={(event) => {
-
-                console.log(event.target.value)
-                setBundleIdState(event.target.value);
-        }} name="back" id="backSelect">
-                <option>Select A Bundle</option>
-               { userBundleList.map(bundle => {
-                   return <option value={bundle.id}>{bundle.name}</option>
-               }) }
-
-        </select>
         </section>
 )}
 

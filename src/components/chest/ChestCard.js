@@ -4,7 +4,7 @@ import "./Chest.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
 
 
-export const ChestCard = ({exercise}) => {
+export const ChestCard = ({exercise, setShowModal}) => {
 
     const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
 
@@ -22,24 +22,14 @@ export const ChestCard = ({exercise}) => {
         <button className="chestButton" onClick={() => { 
             console.log('exercise', exercise)
             let newAssociation = {
-                bundleId: parseInt(bundleIdState),
+                bundleId: parseInt(bundleIdState.id),
                 exerciseId: exercise.id
             };
             addExerciseToBundle(newAssociation);
+            setShowModal(true)
         }}>
                 Add Exercise
         </button>
-        <select onChange={(event) => {
-
-                console.log(event.target.value)
-                setBundleIdState(event.target.value);
-        }} name="chest" id="chestSelect">
-                <option>Select A Bundle</option>
-               { userBundleList.map(bundle => {
-                   return <option value={bundle.id}>{bundle.name}</option>
-               }) }
-
-        </select>
         </section>
 )}
 
