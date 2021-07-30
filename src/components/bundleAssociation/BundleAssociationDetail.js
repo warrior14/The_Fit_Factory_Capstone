@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import { ExerciseTimerModal } from "./ExerciseTimerModal"
 
 export const BundleAssociationDetail = () => {
-  const { getBundleAssociationExerciseById, currentBundle, getBundleExercises, bundleExercises } = useContext(BundleAssociationContext)
+  const { getBundleAssociationExerciseById, currentBundle, getBundleExercises, bundleExercises, bundleAssociations, getBundleAssociations } = useContext(BundleAssociationContext)
 
 	const [bundleAssociationExercise, setBundleAssociationExercise] = useState({})
 
@@ -18,7 +18,8 @@ export const BundleAssociationDetail = () => {
     // .then((response) => {
     //   setBundleAssociationExercise(response)
     // })
-    getBundleExercises(currentBundle.id);
+    // getBundleExercises(currentBundle.id);
+    getBundleAssociations(currentBundle.id);
   }, [])
 
   // let exerciseTimerModal;
@@ -36,22 +37,23 @@ export const BundleAssociationDetail = () => {
         <h1 className="">{currentBundle.name}</h1>
         {
 
-          bundleExercises.map((exercise) => {
+// change to return whole association to have access to sets, time and notes.
+          bundleAssociations.map((bundleAssociation) => {
             return <>
                     {
                       timerIsDisplayed ? <ExerciseTimerModal setTimerIsDisplayed={setTimerIsDisplayed}/> : null
                     }
                     <section className="bundle"> 
-                      <h3 className="">{exercise.name}</h3>
-                      <p className="">{exercise.description}</p>
+                      <h3 className="">{bundleAssociation.exercise.name}</h3>
+                      <p className="">{bundleAssociation.exercise.description}</p>
                     </section>
                     <button onClick={() => {
                       setTimerIsDisplayed(true)
                     }}>Start Workout</button>
-                    <h3>Sets</h3>
-                    <h3>Set Time</h3>
-                    <h3>Cool Down Time</h3>
-                    <h3>Reps</h3>
+                    <h3>Sets: {bundleAssociation.sets}</h3>
+                    <h3>Set Time: {bundleAssociation.setsTime}</h3>
+                    <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds > 10 ? bundleAssociation.cooldownTimeSeconds : `0${bundleAssociation.cooldownTimeSeconds}`}</h3>
+                    <h3>Reps: {bundleAssociation.reps}</h3>
                     <textarea placeholder="Type Notes..."></textarea>
                 </>
           })

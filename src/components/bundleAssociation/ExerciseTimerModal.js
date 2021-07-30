@@ -18,7 +18,7 @@ export const ExerciseTimerModal = ({setTimerIsDisplayed}) => {
     let exerciseCountdown = timer(exerciseSets, setNewTime, setTimeoutState, setTimeoutHandleState, setTimeoutCooldownState, setTimeoutCooldownHandleState);
     
     let startTimer = () => {
-            exerciseCountdown.start(); 
+        exerciseCountdown.start();
     }
 
     let stopTimer = () => {
@@ -39,12 +39,6 @@ export const ExerciseTimerModal = ({setTimerIsDisplayed}) => {
                     {/* <h3 className="">{exercise.name}</h3>
                     <p className="">{exercise.description}</p> */}
                     <h1>Timer Countdown: {timeState}</h1>
-                    <button onClick={() => {
-
-                    }}>changeState</button>
-                    <button onClick={() => {
-
-                    }}>what is thing</button>
                     <button onClick={() => {
                         
                         startTimer();
