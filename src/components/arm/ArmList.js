@@ -6,7 +6,7 @@ import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 export const ArmList = () => {
 
   const { armExercises, getArmExercises } = useContext(ArmContext)
-  const [currentExercise, setCurrentExercise] = useState("")
+  const [currentExercise, setCurrentExercise] = useState({})
 
   const [showModal, setShowModal] = useState(false)
 
