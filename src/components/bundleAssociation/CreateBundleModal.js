@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect }from "react";
 import { BundleAssociationContext } from "./BundleAssociationProvider";
+import "./BundleAssociation.css"
 
 
 export const CreateBundleModal = ({setShowBundleModal}) => {
@@ -20,7 +21,7 @@ return (
     <div className="modal is-active">
     <div className="modal-background"></div>
     <div className="modal-content">
-        <h1>Create Your Workout Bundle!</h1>
+        <h1 className="createBundleButton">Create Your Workout Bundle!</h1>
         <input onChange={(event) => {
             // let newObj = {...newBundle}
             // newObj["name"] = event.target.value;
@@ -30,7 +31,7 @@ return (
             }
             setNewBundle(newObj)
         }} placeholder="name"></input>
-        <button onClick={() => {
+        <button className="createBundleButton" onClick={() => {
             addNewBundle(newBundle) 
             setShowBundleModal(false)
         }}>Create Bundle</button>

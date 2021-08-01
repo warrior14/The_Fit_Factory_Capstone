@@ -4,7 +4,7 @@ import "./Arm.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
 
 
-export const ArmCard = ({exercise, setShowModal}) => {
+export const ArmCard = ({exercise, setShowModal, setCurrentExercise}) => {
 
     const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
 
@@ -25,8 +25,7 @@ export const ArmCard = ({exercise, setShowModal}) => {
                 bundleId: parseInt(bundleState.id),
                 exerciseId: exercise.id
             };
-            // addExerciseToBundle(newAssociation);
-            // alert(`${exercise.name} Added to ${bundleState.name} bundle`)
+            setCurrentExercise(exercise)
             setShowModal(true)
         }}>
                 Add Exercise

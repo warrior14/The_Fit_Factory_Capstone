@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { BundleAssociationContext } from "./BundleAssociationProvider.js";
 import { BundleAssociationCard } from "./BundleAssociationCard.js";
 import { CreateBundleModal } from "./CreateBundleModal"
+import "./BundleAssociation.css"
 
 
 
@@ -27,7 +28,7 @@ export const BundleAssociationList = () => {
   return (
     <>
       <h1 className="bundleHeader">Workout Bundles</h1>
-      <button onClick={() => {
+      <button className="createBundleButton" onClick={() => {
         setShowBundleModal(true);
       }}>Create A Workout Bundle</button>
         
