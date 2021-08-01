@@ -9,7 +9,7 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
 
   const [exercise, setExercise] = useState({
     bundleId: "",
-    exerciseId: currentExercise.id,
+    exerciseId: "",
     sets: "",
     setsTimeMinutes: "",
     setsTimeSeconds: "",
@@ -75,13 +75,17 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
           <div className="modal-content">
               <h1>Add This Exercise To A Bundle!</h1>
               <label>Amount Of Sets:
-                <input onChange={handleExerciseInput} id="sets" placeholder="Amount Of Sets" type='number' className="sets"/>
+                <input onChange={(event) => {handleExerciseInput(event)}} id="sets" placeholder="Amount Of Sets" type='number' className="sets"/>
               </label>
               <label>Sets Time:
-                <input onChange={handleExerciseInput} id="setTime" placeholder="Sets Time" type='time'  max='00:59' min='30:00' className="without" ng-model="endTime" />
+                <input onChange={(event) => {handleExerciseInput(event)}} id="setsTimeMinutes" type="number" className="timeInput" placeholder="Min" min="0" max="5" step="1"></input>
+                <input onChange={(event) => {handleExerciseInput(event)}} id="setsTimeSeconds" type="number" className="timeInput" placeholder="Sec" min="0" max="59"  step="1"></input>
+                {/* <input onChange={handleExerciseInput} id="setTime" placeholder="Sets Time" type='time'  max='00:59' min='30:00' className="without" ng-model="endTime" /> */}
               </label>
               <label>Cool Down Time
-                <input onChange={handleExerciseInput} id="coolDown" placeholder="Cool Down Time" type='time'  max='00:59' min='30:00' className="without" ng-model="endTime"/>
+              <input onChange={(event) => {handleExercieInput(event)}} id="coolDownTimeMinutes" type="number" className="timeInput" placeholder="Min" min="0" max="5" step="1"></input>
+                <input onChange={(event) => {handleExerciseInput(event)}} id="coolDownTimeSeconds" type="number" className="timeInput" placeholder="Sec" min="0" max="59"  step="1"></input>
+                {/* <input onChange={handleExerciseInput} id="coolDown" placeholder="Cool Down Time" type='time'  max='00:59' min='30:00' className="without" ng-model="endTime"/> */}
               </label>
               <textarea id="notes" placeholder="Type Notes..." onChange={handleExerciseInput}></textarea>
               <select onChange={(event) => {
