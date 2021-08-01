@@ -5,3 +5,33 @@
 .bundleHeader {
     font-size: 3em;
 }
+
+.createBundleButton {
+    border-radius: 40%;
+}
+
+.without::-webkit-datetime-edit-ampm-field {
+    display: none;
+}
+
+.without[type=time]::-webkit-clear-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+ 
+.without[type=number]::-webkit-inner-spin-button,
+.without[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+margin: 0; 
+}
+
+
+
+
+.createBundleButton {
+    border-radius: 40%;
+}

@@ -76,7 +76,7 @@ export const BundleAssociationProvider = (props) => {
             },
             body: JSON.stringify(body)
         })
-        .then()
+        .then(getUserBundles)
     };
 
     const logCurrentBundle = (bundle) => {

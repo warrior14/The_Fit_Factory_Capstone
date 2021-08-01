@@ -6,6 +6,7 @@ import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 export const ArmList = () => {
 
   const { armExercises, getArmExercises } = useContext(ArmContext)
+  const [currentExercise, setCurrentExercise] = useState("")
 
   const [showModal, setShowModal] = useState(false)
 
@@ -19,7 +20,7 @@ export const ArmList = () => {
 
   let exerciseModal;
   if (showModal) {    
-    exerciseModal = <AddExerciseModal setShowModal={setShowModal}/>
+    exerciseModal = <AddExerciseModal setShowModal={setShowModal} currentExercise={currentExercise}/>
   } else {
     exerciseModal = null;
   }
@@ -36,7 +37,7 @@ export const ArmList = () => {
         
         {
             armExercises.map(exercise => {
-            return <ArmCard key={exercise.id} exercise={exercise} setShowModal={setShowModal} />
+            return <ArmCard key={exercise.id} exercise={exercise} setShowModal={setShowModal} setCurrentExercise={setCurrentExercise}/>
           })
         }
 
