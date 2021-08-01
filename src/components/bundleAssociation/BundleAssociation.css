@@ -35,3 +35,7 @@ margin: 0;
 .createBundleButton {
     border-radius: 40%;
 }
+
+.timeInput {
+    width: 3.5em;
+}
