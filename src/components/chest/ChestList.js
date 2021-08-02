@@ -7,7 +7,7 @@ import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 export const ChestList = () => {
 
   const { chestExercises, getChestExercises } = useContext(ChestContext)
-
+  const [currentExercise, setCurrentExercise] = useState({})
   const [showModal, setShowModal] = useState(false)
 
 
@@ -22,7 +22,7 @@ export const ChestList = () => {
   
   let exerciseModal;
   if (showModal) {    
-    exerciseModal = <AddExerciseModal setShowModal={setShowModal}/>
+    exerciseModal = <AddExerciseModal setShowModal={setShowModal} currentExercise={currentExercise}/>
   } else {
     exerciseModal = null;
   }
@@ -42,7 +42,7 @@ export const ChestList = () => {
         
         {
             chestExercises.map(exercise => {
-            return <ChestCard key={exercise.id} exercise={exercise} setShowModal={setShowModal}/>
+            return <ChestCard key={exercise.id} exercise={exercise} setShowModal={setShowModal} setCurrentExercise={setCurrentExercise}/>
           })
         }
 

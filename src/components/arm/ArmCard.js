@@ -20,12 +20,6 @@ export const ArmCard = ({exercise, setShowModal, setCurrentExercise}) => {
         <p className="arm__name">{exercise.description}</p>
         <p className="arm__name">Category: {exercise.muscleCategory.name}</p>
         <button className="armButton" onClick={() => { 
-            console.log('exercise t', exercise, "bundleState", bundleState)
-            // move to modal on post
-            // let newAssociation = {
-            //     bundleId: parseInt(bundleState.id),
-            //     exerciseId: exercise.id
-            // };
             setCurrentExercise(exercise)
             setShowModal(true)
         }}>

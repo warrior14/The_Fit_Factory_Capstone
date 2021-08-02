@@ -7,7 +7,7 @@ import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 export const LegList = () => {
 
   const { legExercises, getLegExercises } = useContext(LegContext)
-
+  const [currentExercise, setCurrentExercise] = useState({})
 
   const [showModal, setShowModal] = useState(false)
 
@@ -22,7 +22,7 @@ export const LegList = () => {
 
   let exerciseModal;
   if (showModal) {    
-    exerciseModal = <AddExerciseModal setShowModal={setShowModal}/>
+    exerciseModal = <AddExerciseModal setShowModal={setShowModal} currentExercise={currentExercise}/>
   } else {
     exerciseModal = null;
   }
@@ -40,7 +40,7 @@ export const LegList = () => {
         
         {
             legExercises.map(exercise => {
-            return <LegCard key={exercise.id} exercise={exercise}  setShowModal={setShowModal} />
+            return <LegCard key={exercise.id} exercise={exercise}  setShowModal={setShowModal} setCurrentExercise={setCurrentExercise}/>
           })
         }
 

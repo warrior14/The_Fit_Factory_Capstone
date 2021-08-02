@@ -8,7 +8,7 @@ import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 export const BackList = () => {
 
   const { backExercises, getBackExercises } = useContext(BackContext)
-
+  const [currentExercise, setCurrentExercise] = useState({})
 
   const [showModal, setShowModal] = useState(false)
 
@@ -22,27 +22,20 @@ export const BackList = () => {
 
   let exerciseModal;
   if (showModal) {    
-    exerciseModal = <AddExerciseModal setShowModal={setShowModal}/>
+    exerciseModal = <AddExerciseModal setShowModal={setShowModal} currentExercise={currentExercise}/>
   } else {
     exerciseModal = null;
   }
 
-
-
   return (
     <>
-
       {exerciseModal}
-
-
       <h1 className="backHeader">Back Exercises</h1>
-    
-
       <div className="back">
         
         {
             backExercises.map(exercise => {
-            return <BackCard key={exercise.id} exercise={exercise} setShowModal={setShowModal}/>
+            return <BackCard key={exercise.id} exercise={exercise} setShowModal={setShowModal} setCurrentExercise={setCurrentExercise}/>
           })
         }
 

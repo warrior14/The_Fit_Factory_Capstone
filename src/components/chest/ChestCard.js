@@ -4,11 +4,11 @@ import "./Chest.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
 
 
-export const ChestCard = ({exercise, setShowModal}) => {
+export const ChestCard = ({exercise, setShowModal, setCurrentExercise}) => {
 
     const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
 
-    const [ bundleIdState, setBundleIdState ] = useState({}) 
+    const [ bundleState, setBundleState ] = useState({}) 
 
     useEffect(() => {
         getUserBundles();
@@ -20,12 +20,8 @@ export const ChestCard = ({exercise, setShowModal}) => {
         <p className="chest__name">{exercise.description}</p>
         <p className="chest__name">Category: {exercise.muscleCategory.name}</p>
         <button className="chestButton" onClick={() => { 
-            console.log('exercise', exercise)
-            let newAssociation = {
-                bundleId: parseInt(bundleIdState.id),
-                exerciseId: exercise.id
-            };
-            addExerciseToBundle(newAssociation);
+      
+            setCurrentExercise(exercise)
             setShowModal(true)
         }}>
                 Add Exercise

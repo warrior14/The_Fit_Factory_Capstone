@@ -25,13 +25,9 @@ export const ArmList = () => {
     exerciseModal = null;
   }
 
-
-
   return (
     <>
-    
       {exerciseModal}
-
       <h1 className="armHeader">Arm Exercises</h1>
       <div className="arms">
         
