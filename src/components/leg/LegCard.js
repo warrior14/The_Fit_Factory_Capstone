@@ -4,11 +4,11 @@ import "./Leg.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
 
 
-export const LegCard = ({exercise, setShowModal}) => {
+export const LegCard = ({exercise, setShowModal, setCurrentExercise}) => {
 
     const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
 
-    const [ bundleIdState, setBundleIdState ] = useState({}) 
+    const [ bundleState, setBundleState ] = useState({}) 
 
 
     useEffect(() => {
@@ -21,12 +21,7 @@ export const LegCard = ({exercise, setShowModal}) => {
         <p className="leg__name">{exercise.description}</p>
         <p className="leg__name">Category: {exercise.muscleCategory.name}</p>
         <button className="legButton" onClick={() => { 
-            console.log('exercise', exercise)
-            let newAssociation = {
-                bundleId: parseInt(bundleIdState),
-                exerciseId: exercise.id
-            };
-            addExerciseToBundle(newAssociation);
+            setCurrentExercise(exercise)
             setShowModal(true)
         }}>
                 Add Exercise

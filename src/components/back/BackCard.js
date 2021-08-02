@@ -4,11 +4,11 @@ import "./Back.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
 
 
-export const BackCard = ({exercise, setShowModal}) => {
+export const BackCard = ({exercise, setShowModal, setCurrentExercise}) => {
 
     const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
 
-    const [ bundleIdState, setBundleIdState ] = useState({}) 
+    const [ bundleState, setBundleState ] = useState({}) 
 
     useEffect(() => {
         getUserBundles();
@@ -20,12 +20,8 @@ export const BackCard = ({exercise, setShowModal}) => {
         <p className="back__name">{exercise.description}</p>
         <p className="back__name">Category: {exercise.muscleCategory.name}</p>
         <button className="backButton" onClick={() => { 
-            console.log('exercise', exercise)
-            let newAssociation = {
-                bundleId: parseInt(bundleIdState),
-                exerciseId: exercise.id
-            };
-            addExerciseToBundle(newAssociation);
+            
+            setCurrentExercise(exercise)
             setShowModal(true)
         }}>
                 Add Exercise

@@ -9,10 +9,10 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
 
   const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
 
-  const [ bundleState, setBundleState ] = useState({}) 
+
 
   const [exercise, setExercise] = useState({
-    bundleId: bundleState.id,
+    bundleId: "",
     exerciseId: currentExercise.id,
     sets: "",
     setsTimeMinutes: "",
@@ -25,7 +25,6 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
 
 
   const handleExerciseInput = (event) => {
-    console.log(currentExercise)
    let newExercise = {...exercise}
    newExercise[event.target.id] = event.target.value
    setExercise(newExercise)
@@ -33,7 +32,12 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
 
 
  const postFunctionToBundle = () => {
+   
    addExerciseToBundle(exercise);
+ }
+
+ const checkState = () => {
+   console.log('exercise', exercise);
  }
 
     return (
@@ -42,6 +46,7 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
       <div className="modal is-active">
           <div className="modal-background"></div>
           <div className="modal-content">
+            <button onClick={() => {checkState()}}>check state</button>
               <h1>Add This Exercise To A Bundle!</h1>
               <label>Amount Of Sets:
                 <input onChange={(event) => {handleExerciseInput(event)}} id="sets" placeholder="Amount Of Sets" type='number' min="1" className="sets"/>
@@ -61,7 +66,11 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
 
 
               <select onChange={(event) => {
-                setBundleState(JSON.parse(event.target.value));
+                let newExercise = {...exercise}
+                let bundle = JSON.parse(event.target.value)
+                newExercise["bundleId"] = bundle.id
+                setExercise(newExercise)
+               
               }} name="arms" id="armsSelect">
                 <option>Select A Bundle</option>
               { 
