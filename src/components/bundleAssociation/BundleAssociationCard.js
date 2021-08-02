@@ -3,8 +3,11 @@ import "./BundleAssociation.css"
 import { Link } from "react-router-dom"
 import { BundleAssociationContext } from "./BundleAssociationProvider";
 import "./BundleAssociation.css"
+import { AreYouSureModal } from "./AreYouSureModal";
 
 export const BundleAssociationCard = ({userBundle}) => {
+
+    const [ deleteTheBundleModal, setDeleteTheBundleModal ] = useState(false)
     
     const {logCurrentBundle, editBundle} = useContext(BundleAssociationContext)
 
@@ -15,6 +18,7 @@ export const BundleAssociationCard = ({userBundle}) => {
         name: "",
         userId: parseInt(sessionStorage.getItem("fitfactory_user"))
     })
+
 
     let editNameBundleSection;
     if (editBundleName) {
@@ -36,12 +40,19 @@ export const BundleAssociationCard = ({userBundle}) => {
     } else {
         editNameBundleSection = <p className="bundle__name">{userBundle.name}</p>
     }
-    
-
    
+
+
+    let areYouSureModal;
+   if (deleteTheBundleModal) {
+    areYouSureModal = <AreYouSureModal  setDeleteTheBundleModal={setDeleteTheBundleModal} userBundleId={userBundle.id} />
+   } else {
+    areYouSureModal = null;
+   }
        
     
     return ( <section className="bundle">
+        {areYouSureModal}
         {editNameBundleSection}
         <button onClick={() => {
             setEditBundleName(true)
@@ -51,6 +62,9 @@ export const BundleAssociationCard = ({userBundle}) => {
                 logCurrentBundle(userBundle);
             }}>Select Bundle</button>
         </Link>
+        <button onClick={() => {
+                setDeleteTheBundleModal(true)
+            }}>Delete</button>
     </section>) 
 }
  
