@@ -36,9 +36,7 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
    addExerciseToBundle(exercise);
  }
 
- const checkState = () => {
-   console.log('exercise', exercise);
- }
+
 
     return (
 
@@ -46,7 +44,6 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
       <div className="modal is-active">
           <div className="modal-background"></div>
           <div className="modal-content">
-            <button onClick={() => {checkState()}}>check state</button>
               <h1>Add This Exercise To A Bundle!</h1>
               <label>Amount Of Sets:
                 <input onChange={(event) => {handleExerciseInput(event)}} id="sets" placeholder="Amount Of Sets" type='number' min="1" className="sets"/>
@@ -54,12 +51,10 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
               <label>Sets Time:
                 <input onChange={(event) => {handleExerciseInput(event)}} id="setsTimeMinutes" type="number" className="timeInput" placeholder="Min" min="0" max="5" step="1"></input>
                 <input onChange={(event) => {handleExerciseInput(event)}} id="setsTimeSeconds" type="number" className="timeInput" placeholder="Sec" min="0" max="59"  step="1"></input>
-                {/* <input onChange={handleExerciseInput} id="setTime" placeholder="Sets Time" type='time'  max='00:59' min='30:00' className="without" ng-model="endTime" /> */}
               </label>
               <label>Cool Down Time
               <input onChange={(event) => {handleExerciseInput(event)}} id="cooldownTimeMinutes" type="number" className="timeInput" placeholder="Min" min="0" max="5" step="1"></input>
                 <input onChange={(event) => {handleExerciseInput(event)}} id="cooldownTimeSeconds" type="number" className="timeInput" placeholder="Sec" min="0" max="59"  step="1"></input>
-                {/* <input onChange={handleExerciseInput} id="coolDown" placeholder="Cool Down Time" type='time'  max='00:59' min='30:00' className="without" ng-model="endTime"/> */}
               </label>
               <input type="number" min="1" id="reps" placeholder="Reps" onChange={(event) => {handleExerciseInput(event)}}></input>
               <textarea id="notes" placeholder="Type Notes..." onChange={(event) => {handleExerciseInput(event)}}></textarea>
