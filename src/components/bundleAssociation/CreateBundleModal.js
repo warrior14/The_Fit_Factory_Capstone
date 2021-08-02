@@ -23,8 +23,6 @@ return (
     <div className="modal-content">
         <h1 className="createBundleButton">Create Your Workout Bundle!</h1>
         <input onChange={(event) => {
-            // let newObj = {...newBundle}
-            // newObj["name"] = event.target.value;
             let newObj =  {
                 name: event.target.value,
                 userId: parseInt(sessionStorage.getItem("fitfactory_user")) 

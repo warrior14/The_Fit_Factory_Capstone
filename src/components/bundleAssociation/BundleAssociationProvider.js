@@ -112,13 +112,25 @@ export const BundleAssociationProvider = (props) => {
         })
     }
 
+
+    const editBundle = (bundle) => {
+        return fetch(`http://localhost:8088/bundles/${bundle.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(bundle)
+        }) 
+        .then(getUserBundles)
+    };
+
  
 
     return (
         <BundleAssociationContext.Provider value={{
             bundleAssociationExercises, getBundleAssociationExercises, getBundleAssociationExerciseById,
              addExerciseToBundle, getAllBundles, getUserBundles, userBundleList, logCurrentBundle, currentBundle, getBundleExercises,
-              bundleExercises, getBundleAssociations, bundleAssociations, addNewBundle
+              bundleExercises, getBundleAssociations, bundleAssociations, addNewBundle, editBundle
         }}>
             {props.children}
         </BundleAssociationContext.Provider>

@@ -39,3 +39,8 @@ margin: 0;
 .timeInput {
     width: 3.5em;
 }
+
+
+.editBundleName {
+    border-radius: 40%;
+}
