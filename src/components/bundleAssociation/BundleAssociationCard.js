@@ -63,7 +63,7 @@ export const BundleAssociationCard = ({userBundle}) => {
                 logCurrentBundle(userBundle);
             }}>Select Bundle</button>
         </Link>
-        <button className="deleteBundleButton" onClick={() => {
+        <button className="deleteBundle" onClick={() => {
                 setDeleteTheBundleModal(true)
             }}>Delete</button>
     </section>) 

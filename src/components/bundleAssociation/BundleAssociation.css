@@ -20,6 +20,10 @@
     appearance: none;
     margin: 0; 
 }
+
+.cp {
+    font-weight: 900;
+}
  
 .without[type=number]::-webkit-inner-spin-button,
 .without[type=number]::-webkit-outer-spin-button {
@@ -29,6 +33,47 @@ appearance: none;
 margin: 0; 
 }
 
+.hero {
+    font-family: cursive;
+    font-size: 2em;
+}
+
+.backButton:hover {
+    color: goldenrod;
+}
+
+.chestButton:hover {
+    color: goldenrod;
+}
+
+.armButton:hover {
+    color: goldenrod;
+}
+
+.button:hover {
+    color: goldenrod;
+    border-radius: 40%;
+}
+
+.legButton:hover {
+    color: goldenrod;
+}
+
+.bundleButton:hover {
+    color: goldenrod;
+}
+
+.deleteBundle:hover {
+    color: goldenrod;
+}
+
+.editBundleName:hover {
+    color: goldenrod;
+}
+
+.createBundleButton:hover {
+    color: goldenrod;
+}
 
 .deleteBundleModal {
     border-radius: 40%;
@@ -45,5 +90,9 @@ margin: 0;
 
 
 .editBundleName {
+    border-radius: 40%;
+}
+
+.deleteBundle {
     border-radius: 40%;
 }

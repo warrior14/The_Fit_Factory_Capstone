@@ -74,7 +74,7 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
               </select>
 
 
-              <button onClick={() => {
+              <button className="deleteBundle" conClick={() => {
                 alert("Exercise has been added to your bundle!")
                 setShowModal(false)
                 postFunctionToBundle();

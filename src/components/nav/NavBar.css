@@ -8,10 +8,13 @@
     flex-basis: 20%;
     list-style-type: none;
     text-align: center;
+    font-family: cursive;
 }
   
+
+
 .active {
-    background-color: rgb(199, 187, 187);
+    background-color: rgb(165, 152, 152);
     border-radius: 100px;
     border-radius: 100%;
 }
@@ -24,3 +27,8 @@
 .navbar__link {
     color: black;
 }
+
+.navbar:hover {
+    color: goldenrod;
+}
+
