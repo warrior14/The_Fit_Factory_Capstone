@@ -5,3 +5,8 @@
 .armHeader {
     font-size: 3em;
 }
+
+.tn {
+    font-weight: 900;
+    font-style: italic;   
+}

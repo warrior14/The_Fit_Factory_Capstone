@@ -12,10 +12,10 @@ export const AreYouSureModal = ({setDeleteTheBundleModal, userBundleId}) => {
           <div className="modal-background"></div>
           <div className="modal-content">
               <h1>Are You Sure You Want To Delete This Bundle?</h1>
-              <button onClick={() => {
+              <button className="button" onClick={() => {
                   deleteTheBundle(userBundleId)
               }}>Yes</button>
-              <button onClick={() => {
+              <button className="button" onClick={() => {
                   setDeleteTheBundleModal(false)
               }}>No</button>
           </div>

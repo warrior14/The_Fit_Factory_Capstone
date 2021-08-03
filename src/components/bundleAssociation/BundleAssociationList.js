@@ -27,7 +27,7 @@ export const BundleAssociationList = () => {
 
   return (
     <>
-      <h1 className="bundleHeader">Workout Bundles</h1>
+      <h1 className="hero">Workout Bundles</h1>
       <button className="createBundleButton" onClick={() => {
         setShowBundleModal(true);
       }}>Create A Workout Bundle</button>

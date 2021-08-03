@@ -5,3 +5,8 @@
 .legHeader {
     font-size: 3em;
 }
+
+.leg {
+    font-weight: 900;
+    font-style: italic;
+}

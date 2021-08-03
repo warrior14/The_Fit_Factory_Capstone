@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom"
 import React, { useContext, useEffect, useState } from "react";
 import "./Chest.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
+// import "./BundleAssociation.css"
 
 
 export const ChestCard = ({exercise, setShowModal, setCurrentExercise}) => {
@@ -16,7 +17,7 @@ export const ChestCard = ({exercise, setShowModal, setCurrentExercise}) => {
 
     return ( 
     <section className="chest">
-        <h3 className="chest__name">{exercise.name}</h3>
+        <h3 className="cp">{exercise.name}</h3>
         <p className="chest__name">{exercise.description}</p>
         <p className="chest__name">Category: {exercise.muscleCategory.name}</p>
         <button className="chestButton" onClick={() => { 

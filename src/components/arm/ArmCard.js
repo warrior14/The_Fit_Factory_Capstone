@@ -16,7 +16,7 @@ export const ArmCard = ({exercise, setShowModal, setCurrentExercise}) => {
 
     return ( 
     <section className="arm">
-        <h3 className="arm__name">{exercise.name}</h3>
+        <h3 className="tn">{exercise.name}</h3>
         <p className="arm__name">{exercise.description}</p>
         <p className="arm__name">Category: {exercise.muscleCategory.name}</p>
         <button className="armButton" onClick={() => { 
