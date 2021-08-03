@@ -34,6 +34,50 @@ export const Home = () => (
                 <li>EAT PROTEIN : Eat sufficient protein. Even if you train hard, the maximum amount of protein you need for muscle building is just less than 1 gram of protein per pound of body weight per day.</li>     
             </ul>
         </div>
+        {/* <section class="testimonials">
+            <h1>What Our Alumnis Say!</h1>
+            <p>Raw and honest testimonials that prove that our Gaming University works!</p>
+
+            <div class="row">
+                <div class="testimonial-col">
+                    <img src="images/luke.jpg">
+                    <div>
+                        <p>At first I was a noob at playing video games but now ... I annihilate noobs!</p>
+                        <h3>Lukang</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-col">
+                <img src="images/gabe.jpg">
+                <div>
+                    <p>Playing video games is my passion so it was only natural to want to step up my game! Woop woop!</p>
+                    <h3>Gabrielo</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+            <div class="testimonial-col">
+                <img src="images/sis.jpg">
+                <div>
+                    <p>I don't like losing ... I like winning ... so I had to enroll at Gaming University!</p>
+                    <h3>Luzo</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+
+    </section> */}
 
     </>
 )

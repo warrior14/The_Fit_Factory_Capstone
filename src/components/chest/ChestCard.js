@@ -4,7 +4,7 @@ import "./Chest.css"
 import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociationProvider";
 // import "./BundleAssociation.css"
 
-
+<div className="parallax"></div>
 export const ChestCard = ({exercise, setShowModal, setCurrentExercise}) => {
 
     const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
