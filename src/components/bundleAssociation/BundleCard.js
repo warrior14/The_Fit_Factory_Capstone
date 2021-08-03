@@ -6,7 +6,7 @@ import "./BundleAssociation.css"
 import { AreYouSureModal } from "./AreYouSureModal";
 import "./BundleAssociation.css"
 
-export const BundleAssociationCard = ({userBundle}) => {
+export const BundleCard = ({userBundle}) => {
 
     const [ deleteTheBundleModal, setDeleteTheBundleModal ] = useState(false)
     
@@ -58,7 +58,7 @@ export const BundleAssociationCard = ({userBundle}) => {
         <button onClick={() => {
             setEditBundleName(true)
         }}className="editBundleName">Edit Bundle Name</button>
-        <Link to={`/bundle/detail/${userBundle.id}`}>
+        <Link to={`/bundle/associationList/${userBundle.id}`}>
             <button className="bundleButton" onMouseOver={() => {
                 logCurrentBundle(userBundle);
             }}>Select Bundle</button>

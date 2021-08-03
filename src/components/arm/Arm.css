@@ -4,9 +4,11 @@
 
 .armHeader {
     font-size: 3em;
+    font-family: cursive;
 }
 
 .tn {
     font-weight: 900;
     font-style: italic;   
 }
+

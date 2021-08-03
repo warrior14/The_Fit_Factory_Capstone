@@ -100,6 +100,7 @@ export const BundleAssociationProvider = (props) => {
     }
 
     const getBundleAssociations = (bundleId) => {
+        console.log('id', bundleId);
         return fetch("http://localhost:8088/bundleAssociation?_expand=exercise")
         .then(res => res.json())
         .then((allBundleAssociations) => {
@@ -108,6 +109,7 @@ export const BundleAssociationProvider = (props) => {
                     return association
                 }
             })    
+            console.log('bundle associations', bundleAssociations);
             return setBundleAssociation(bundleAssociations)
         })
     }
@@ -125,6 +127,18 @@ export const BundleAssociationProvider = (props) => {
     };
 
 
+    const patchExerciseAssociation = (association) => {
+        return fetch(`http://localhost:8088/bundleAssociation/${association.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(association)
+        })
+        .then(getBundleAssociations(association.bundleId))
+    }
+
+
     const deleteTheBundle = (bundleId) => {
         return fetch(`http://localhost:8088/bundles/${bundleId}`, {
             method: "DELETE",
@@ -132,13 +146,19 @@ export const BundleAssociationProvider = (props) => {
         .then(getUserBundles)
     }
 
- 
+const deleteExercise = (bundleAssociationId) => {
+    return fetch(`http://localhost:8088/bundleAssociation/${bundleAssociationId}`, {
+        method: "DELETE",
+    })
+    .then(getBundleAssociations)
+} 
 
     return (
         <BundleAssociationContext.Provider value={{
             bundleAssociationExercises, getBundleAssociationExercises, getBundleAssociationExerciseById,
              addExerciseToBundle, getAllBundles, getUserBundles, userBundleList, logCurrentBundle, currentBundle, getBundleExercises,
-              bundleExercises, getBundleAssociations, bundleAssociations, addNewBundle, editBundle, deleteTheBundle
+              bundleExercises, getBundleAssociations, bundleAssociations, addNewBundle, editBundle, deleteTheBundle,
+               patchExerciseAssociation, deleteExercise
         }}>
             {props.children}
         </BundleAssociationContext.Provider>

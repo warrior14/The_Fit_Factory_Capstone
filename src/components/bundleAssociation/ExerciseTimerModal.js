@@ -22,7 +22,8 @@ export const ExerciseTimerModal = ({setTimerModalIsDisplayed, bundle, sets, sets
         console.log('bundle use effect', bundle);
     },[])
 
-    let exerciseCountdown = timer(sets, setsTimeMinutes, setsTimeSeconds, coolDownTimeMinutes, coolDownTimeSeconds ,setNewTime, setTimeoutState, setTimeoutHandleState, setTimeoutCooldownState, setTimeoutCooldownHandleState);
+    // have to parseInt because the numbers are strings in the database.
+    let exerciseCountdown = timer(parseInt(sets), parseInt(setsTimeMinutes), parseInt(setsTimeSeconds), parseInt(coolDownTimeMinutes), parseInt(coolDownTimeSeconds) ,setNewTime, setTimeoutState, setTimeoutHandleState, setTimeoutCooldownState, setTimeoutCooldownHandleState);
     
     let startTimer = () => {
         console.log("setsTimeMinutes", setsTimeMinutes, "setsTimeSeconds", setsTimeSeconds)
