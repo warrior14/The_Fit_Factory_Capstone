@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { BundleAssociationContext } from "./BundleAssociationProvider";
 import "./BundleAssociation.css"
 import { AreYouSureModal } from "./AreYouSureModal";
+import "./BundleAssociation.css"
 
 export const BundleAssociationCard = ({userBundle}) => {
 
@@ -62,7 +63,7 @@ export const BundleAssociationCard = ({userBundle}) => {
                 logCurrentBundle(userBundle);
             }}>Select Bundle</button>
         </Link>
-        <button onClick={() => {
+        <button className="deleteBundleButton" onClick={() => {
                 setDeleteTheBundleModal(true)
             }}>Delete</button>
     </section>) 
