@@ -21,7 +21,23 @@ export const BundleAssociationDetail = () => {
 
   const [currentAssociation, setCurrentAssociation] = useState(JSON.parse(sessionStorage.getItem("currentAssociation")))
 
- 
+ const [editSets, setEditSets] = useState(false)
+
+ const [editSetsTime, setEditSetsTime] = useState(false)
+
+ const [editCoolDownTime, setEditCoolDownTime] = useState(false)
+
+ const [editReps, setEditReps] = useState(false)
+
+ const [editNotes, setEditNotes] = useState(false)
+
+
+// let editSets;
+// if (editSets) {
+//   let editSets = 
+// }
+
+
 
   return (
     <>
@@ -47,11 +63,11 @@ export const BundleAssociationDetail = () => {
                     <button onClick={() => {
                       setTimerModalIsDisplayed(true)
                     }}>Start Workout</button>
-                    <h3>Sets: {bundleAssociation.sets}</h3>
-                    <h3>Sets Time: {bundleAssociation.setsTimeMinutes}:{bundleAssociation.setsTimeSeconds > 10 ? bundleAssociation.setsTimeSeconds : `0${bundleAssociation.setsTimeSeconds}`}</h3>
-                    <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds > 10 ? bundleAssociation.cooldownTimeSeconds : `0${bundleAssociation.cooldownTimeSeconds}`}</h3>
-                    <h3>Reps: {bundleAssociation.reps}</h3>
-                    <textarea placeholder="Type Notes..." defaultValue={bundleAssociation.notes}></textarea>
+                    <h3>Sets: {bundleAssociation.sets}</h3><button>Edit</button>
+                    <h3>Sets Time: {bundleAssociation.setsTimeMinutes}:{bundleAssociation.setsTimeSeconds > 10 ? bundleAssociation.setsTimeSeconds : `0${bundleAssociation.setsTimeSeconds}`}</h3><button>Edit</button>
+                    <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds > 10 ? bundleAssociation.cooldownTimeSeconds : `0${bundleAssociation.cooldownTimeSeconds}`}</h3><button>Edit</button>
+                    <h3>Reps: {bundleAssociation.reps}</h3><button>Edit</button>
+                    <textarea placeholder="Type Notes..." defaultValue={bundleAssociation.notes}></textarea><button>Edit</button>
 
                 </div>
           })

@@ -32,6 +32,7 @@ return (
         <button className="createBundleButton" onClick={() => {
             addNewBundle(newBundle) 
             setShowBundleModal(false)
+            alert("Your bundle has been created!")
         }}>Create Bundle</button>
         
 

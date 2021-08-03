@@ -30,7 +30,10 @@ margin: 0;
 }
 
 
-
+.deleteBundleModal {
+    border-radius: 40%;
+    color: red;
+}
 
 .createBundleButton {
     border-radius: 40%;
