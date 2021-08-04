@@ -57,7 +57,7 @@ export const BundleCard = ({userBundle}) => {
         {editNameBundleSection}
         <button onClick={() => {
             setEditBundleName(true)
-        }}className="editBundleName">Edit Bundle Name</button>
+        }}className="editBundleName"><img src="https://img.icons8.com/color/48/000000/edit--v1.png"/></button>
         <Link to={`/bundle/associationList/${userBundle.id}`}>
             <button className="bundleButton" onMouseOver={() => {
                 logCurrentBundle(userBundle);
@@ -65,7 +65,7 @@ export const BundleCard = ({userBundle}) => {
         </Link>
         <button className="deleteBundle" onClick={() => {
                 setDeleteTheBundleModal(true)
-            }}>Delete</button>
+            }}><img src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button>
     </section>) 
 }
  

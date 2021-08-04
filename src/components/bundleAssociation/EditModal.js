@@ -24,31 +24,31 @@ export const EditModal = ({setShowEditModal, currentAssociation}) => {
         <div className="modal-content">
         <input id="sets" onChange={(event) => {
                 handleEdit(event)
-            }} defaultValue={currentAssociation.sets}></input>
+            }} placeholder="Amount Of Sets"></input>
             <input onChange={(event) => {
                 handleEdit(event)
-                }} id="setsTimeMinutes" defaultValue={currentAssociation.setsTimeMinutes}></input>
+                }} id="setsTimeMinutes" placeholder="Sets Time In Min"></input>
                 <input onChange={(event) => {
                 handleEdit(event)
-                }} id="setsTimeSeconds" defaultValue={currentAssociation.setsTimeSeconds}></input>
+                }} id="setsTimeSeconds" placeholder="Sets Time In Sec"></input>
                 <input onChange={(event) => {
                 handleEdit(event)
-                }}id="coolDownTimeMinutes" defaultValue={currentAssociation.cooldownTimeMinutes}></input>
+                }}id="coolDownTimeMinutes" placeholder="Cool Down Time In Min"></input>
                 <input onChange={(event) => {
                 handleEdit(event)
-                }} id="coolDownTimeSeconds" defaultValue={currentAssociation.cooldownTimeSeconds}></input>
+                }} id="coolDownTimeSeconds" placeholder="Cool Down Time In Sec"></input>
                 <input onChange={(event) => {
                 handleEdit(event)
-                }} id="reps" defaultValue={currentAssociation.reps}></input>
+                }} id="reps" placeholder="Amount Of Reps"></input>
                 <textarea onChange={(event) => {
                 handleEdit(event)
-                }} id="notes" defaultValue={currentAssociation.notes}></textarea>
-                <button onClick={() => {
+                }} id="notes" placeholder="Type Notes..."></textarea>
+                <button className="button" onClick={() => {
                 // this is where the post function goes
                     patchExerciseAssociation(valuesToEdit)
                     setShowEditModal(false)
                 }}>Save</button>
-                <button onClick={() => {
+                <button className="button" onClick={() => {
                     setShowEditModal(false)
                 }}>Cancel</button>
 

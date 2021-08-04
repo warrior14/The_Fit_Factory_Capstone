@@ -3,3 +3,56 @@
     min-height: 5rem;
   }
   
+
+  .loginDiv {
+    background-image: url("https://www.wallgroup.com/media/catalog/product/cache/ce339dd56671d6bccbcac0916ee6b376/w/0/w03193-small.jpg");
+
+  /* Set a specific height */
+  min-height: 800px;
+
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  }
+
+  /* https://www.wallgroup.com/media/catalog/product/cache/ce339dd56671d6bccbcac0916ee6b376/w/0/w03193-small.jpg */
+
+  /* https://cdn.wallpapersafari.com/35/38/HiIdhF.jpg */
+
+  .container--login {
+    background-color: rgb(235, 225, 225);
+    width: 25%;
+    padding: 1em;
+    margin: auto;
+    border-radius: 55px;
+    border: 2px solid black;
+    text-align: center;
+  }
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: goldenrod;
+  }
+
+  .loginButton {
+    margin: 3px;
+    cursor: pointer;
+    background-color: rgb(236, 232, 232);
+    border: 1px solid black;
+  }
+
+  fieldset {
+    margin: .5em;
+  }
+
+  .logoLogin {
+    mix-blend-mode: multiply;
+    border-radius: 2em;
+  }

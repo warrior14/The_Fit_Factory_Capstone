@@ -46,45 +46,48 @@ export const Login = () => {
     }
 
     return (
-        <main className="container--login">
-            <dialog className="dialog dialog--auth" open={existDialog}>
-                <div>User Does Not Exist</div>
-                <button className="button--close" onClick={e => setExistDialog(false)}>Close</button>
-            </dialog>
-            <section>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1>"We Are The Sheep And Joe Is Our Shepherd! - Luke Madrazo"</h1>
-                    <h2>Please Sign In To The Fit Factory</h2>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email Address </label>
-                        <input type="email"
-                            id="email"
-                            className="form-control"
-                            placeholder="Email address"
-                            required autoFocus
-                            value={loginUser.email}
-                            onChange={handleInputChange} />
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input type="password"
-                            id="password"
-                            className="form-control"
-                            placeholder="Password"
-                            required autoFocus
-                            value={loginUser.password}
-                            onChange={handleInputChange} />
-                    </fieldset>
-                    <fieldset>
-                        <button type="submit">
-                            Sign In
-                        </button>
-                    </fieldset>
-                </form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">Register For An Account</Link>
-            </section>
-        </main>
+        <div className="loginDiv">
+            <main className="container--login">
+                <dialog className="dialog dialog--auth" open={existDialog}>
+                    <div>User Does Not Exist</div>
+                    <button className="button--close" onClick={e => setExistDialog(false)}>Close</button>
+                </dialog>
+                <section>
+                    <form className="form--login" onSubmit={handleLogin}>
+                        <img className="logoLogin" src="./images/logo2.PNG" alt=""></img>
+                        <h1>"We Are The Sheep And Joe Is Our Shepherd! - Luke Madrazo"</h1>
+                        <h2>Please Sign In To The Fit Factory</h2>
+                        <fieldset>
+                            <label htmlFor="inputEmail"> Email Address </label>
+                            <input type="email"
+                                id="email"
+                                className="form-control"
+                                placeholder="Email address"
+                                required autoFocus
+                                value={loginUser.email}
+                                onChange={handleInputChange} />
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="inputPassword"> Password </label>
+                            <input type="password"
+                                id="password"
+                                className="form-control"
+                                placeholder="Password"
+                                required autoFocus
+                                value={loginUser.password}
+                                onChange={handleInputChange} />
+                        </fieldset>
+                        <fieldset>
+                            <button className="button is-rounded loginButton" type="submit">
+                                Sign In
+                            </button>
+                        </fieldset>
+                    </form>
+                </section>
+                <section className="link--register">
+                    <Link to="/register">Register For An Account</Link>
+                </section>
+            </main>
+        </div>
     )
 }

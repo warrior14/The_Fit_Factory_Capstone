@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 import { ExerciseTimerModal } from "./ExerciseTimerModal"
 import { EditModal } from "./EditModal"
 
+
 export const BundleAssociationList = () => {
 
   const { getBundleAssociationExerciseById, currentBundle, getBundleExercises, bundleExercises, bundleAssociations, getBundleAssociations, patchExerciseAssociation, deleteExercise } = useContext(BundleAssociationContext)
@@ -33,17 +34,17 @@ if (showEditModal) {
   editedModal = null;
 }
 
-let checkState = () => {
-  console.log('state', bundleAssociations)
-}
+// let checkState = () => {
+//   console.log('state', bundleAssociations)
+// }
 
 
   return (
     <> 
         <h1 className="">{currentBundle.name}</h1>
-        <button onClick={() => {
+        {/* <button onClick={() => {
           checkState()
-        }}>check bundle association state</button>
+        }}>check bundle association state</button> */}
         {editedModal}
         {
           timerModalIsDisplayed ? <ExerciseTimerModal setTimerModalIsDisplayed={setTimerModalIsDisplayed} bundle={currentAssociation} sets={currentAssociation.sets} setsTimeMinutes={currentAssociation.setsTimeMinutes} setsTimeSeconds={currentAssociation.setsTimeSeconds}
@@ -58,10 +59,10 @@ let checkState = () => {
             }}>
                     <section className="bundle"> 
                       <h3 className="">{bundleAssociation.exercise.name}</h3>
-                        <button onClick={() => {
-                          deleteExercise(bundleAssociation.id)
+                        <button className="deleteExerciseButton" onClick={() => {
+                          deleteExercise(currentBundle.id, bundleAssociation.id)
                           console.log(bundleAssociation.exercise)
-                        }}>Delete</button>
+                        }}><img src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button>
                       <p className="">{bundleAssociation.exercise.description}</p>
                     </section>
                     <button onClick={() => {
@@ -69,7 +70,7 @@ let checkState = () => {
                     }}>Start Workout</button>
                     <button onClick={() => {
                             setShowEditModal(true)
-                          }}>Edit</button>
+                          }}><img src="https://img.icons8.com/color/48/000000/edit--v1.png"/></button>
                           <h3>Sets: {bundleAssociation.sets}</h3>
                           <h3>Sets Time: {bundleAssociation.setsTimeMinutes}:{bundleAssociation.setsTimeSeconds > 10 ? bundleAssociation.setsTimeSeconds : `0${bundleAssociation.setsTimeSeconds}`}</h3>
                           <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds > 10 ? 
