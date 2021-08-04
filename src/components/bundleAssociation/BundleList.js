@@ -27,7 +27,7 @@ export const BundleList = () => {
   return (
     <>
       <h1 className="hero">Workout Bundles</h1>
-      <button className="createBundleButton" onClick={() => {
+      <button className="creationBundle" onClick={() => {
         setShowBundleModal(true);
       }}>Create A Workout Bundle</button>
         
@@ -39,7 +39,6 @@ export const BundleList = () => {
             return <BundleCard key={userBundle.id} userBundle={userBundle} />
           })
         }
-
       </div>
     </>
   )

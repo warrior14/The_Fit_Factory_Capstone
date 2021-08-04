@@ -6,15 +6,17 @@ import { BundleAssociationContext } from "./../bundleAssociation/BundleAssociati
 
 export const LegCard = ({exercise, setShowModal, setCurrentExercise}) => {
 
-    const { addExerciseToBundle, userBundleList, getUserBundles } = useContext(BundleAssociationContext)
+    const { getUserBundles } = useContext(BundleAssociationContext)
 
-    const [ bundleState, setBundleState ] = useState({}) 
+
 
 
     useEffect(() => {
         getUserBundles();
     }, [])
 
+
+    
     return ( 
     <section className="legName">
         <h1 className="leg">{exercise.name}</h1>

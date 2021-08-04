@@ -146,11 +146,11 @@ export const BundleAssociationProvider = (props) => {
         .then(getUserBundles)
     }
 
-const deleteExercise = (bundleAssociationId) => {
+const deleteExercise = (bundleId, bundleAssociationId) => {
     return fetch(`http://localhost:8088/bundleAssociation/${bundleAssociationId}`, {
         method: "DELETE",
     })
-    .then(getBundleAssociations)
+    .then(getBundleAssociations(bundleId))
 } 
 
     return (

@@ -8,6 +8,7 @@
 
 .createBundleButton {
     border-radius: 40%;
+    font-size: 30px;    
 }
 
 .without::-webkit-datetime-edit-ampm-field {
@@ -19,6 +20,15 @@
     -moz-appearance: none;
     appearance: none;
     margin: 0; 
+}
+
+
+.deleteExerciseButton {
+    border-radius: 40%;
+}
+
+.deleteExerciseButton:hover {
+    color: goldenrod;
 }
 
 .cp {
@@ -95,4 +105,51 @@ margin: 0;
 
 .deleteBundle {
     border-radius: 40%;
+}
+
+
+.createBundleModal {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://www.wallgroup.com/media/catalog/product/cache/ce339dd56671d6bccbcac0916ee6b376/w/0/w03193-small.jpg");
+
+    /* Set a specific height */
+    min-height: 200px;
+  
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bundleForm {
+    background-color: rgb(235, 225, 225);
+    width: 25%;
+    padding: 1em;
+    margin: auto;
+    border-radius: 55px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.bundleInput {
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin: 5px;
+}
+
+.createBut {
+    margin: 5px;
+}
+
+.exitBundle {
+    background-color: goldenrod;
+    font-size: 1em;
+}
+
+.creationBunlde {
+    font-size: 2em;
 }
