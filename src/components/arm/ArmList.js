@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ArmContext } from "./ArmProvider.js";
 import { ArmCard } from "./ArmCard.js";
 import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
+import "./Arm.css"
 
 export const ArmList = () => {
 
@@ -27,6 +28,7 @@ export const ArmList = () => {
 
   return (
     <>
+    <div className="armDiv">
       {exerciseModal}
       <h1 className="armHeader">Arm Exercises</h1>
       <div className="arms">
@@ -37,6 +39,7 @@ export const ArmList = () => {
           })
         }
 
+      </div>
       </div>
     </>
   )

@@ -4,6 +4,7 @@ import "./BundleAssociation.css"
 import { useParams } from "react-router-dom"
 import { ExerciseTimerModal } from "./ExerciseTimerModal"
 import { EditModal } from "./EditModal"
+// import Swal from "sweetalert2"
 
 
 export const BundleAssociationList = () => {
@@ -27,21 +28,40 @@ export const BundleAssociationList = () => {
 
 
 
-let editedModal;
-if (showEditModal) {
-  editedModal = <EditModal setShowEditModal={setShowEditModal}  currentAssociation={currentAssociation}/>
-} else {
-  editedModal = null;
-}
+  let editedModal;
+  if (showEditModal) {
+    editedModal = <EditModal setShowEditModal={setShowEditModal}  currentAssociation={currentAssociation}/>
+  } else {
+    editedModal = null;
+  }
 
-// let checkState = () => {
-//   console.log('state', bundleAssociations)
-// }
+  // const handleDeleteExercise = () => {
+  //   Swal.fire({
+  //     title: "Are you sure you want to delete this exercise?",
+  //     icon: "warning",
+  //     confirmButtonColor: "#DAA520",
+  //     showCancelButton: true,
+  //     cancelButtonColor: "#BEC3C6",
+  //     confirmButtonText: "Yes, I'm sure!"
+  //   }).then((res) => {
+  //     if (res.isConfirmed) {
+  //       bundleAssociations.map(bundleAssociation => {
+  //         deleteExercise(currentBundle.id, bundleAssociation.id).then(() => {
+  //           Swal.fire(
+  //             'Deleted!',
+  //             'Exercise has been removed!',
+  //             'success'
+  //           )
+  //         })
+  //       })
+  //     }
+  //   })
+  // }
 
 
   return (
     <> 
-        <h1 className="">{currentBundle.name}</h1>
+        <h1 className="workoutName">{currentBundle.name}</h1>
         {/* <button onClick={() => {
           checkState()
         }}>check bundle association state</button> */}
@@ -54,30 +74,41 @@ if (showEditModal) {
           // change to return whole association to have access to sets, time and notes.
           bundleAssociations.map((bundleAssociation) => {
             return <div onMouseOver={() => {
+              console.log('selected exercise', bundleAssociation);
               sessionStorage.setItem("currentAssociation", JSON.stringify(bundleAssociation));
               setCurrentAssociation(bundleAssociation);
             }}>
                     <section className="bundle"> 
-                      <h3 className="">{bundleAssociation.exercise.name}</h3>
+                      <h3 className="exercise__name">{bundleAssociation.exercise.name}</h3>
+                      {/* <button className="deleteExerciseButton" onClick={() => {
+                          handleDeleteExercise()
+                        }}><img className="trashIcon" src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button> */}
                         <button className="deleteExerciseButton" onClick={() => {
                           deleteExercise(currentBundle.id, bundleAssociation.id)
                           console.log(bundleAssociation.exercise)
-                        }}><img src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button>
-                      <p className="">{bundleAssociation.exercise.description}</p>
+                        }}><img className="trashIcon" src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button>
+                      <p className="describe">{bundleAssociation.exercise.description}</p>
                     </section>
-                    <button onClick={() => {
-                      setTimerModalIsDisplayed(true)
-                    }}>Start Workout</button>
-                    <button onClick={() => {
-                            setShowEditModal(true)
-                          }}><img src="https://img.icons8.com/color/48/000000/edit--v1.png"/></button>
-                          <h3>Sets: {bundleAssociation.sets}</h3>
-                          <h3>Sets Time: {bundleAssociation.setsTimeMinutes}:{bundleAssociation.setsTimeSeconds > 10 ? bundleAssociation.setsTimeSeconds : `0${bundleAssociation.setsTimeSeconds}`}</h3>
-                          <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds > 10 ? 
-                            bundleAssociation.cooldownTimeSeconds : `0${bundleAssociation.cooldownTimeSeconds}`}</h3>
-                            <h3>Reps: {bundleAssociation.reps}</h3>
-                            <p>{bundleAssociation.notes}</p>
-                                            </div>
+                    <div className="workingOut">
+                      <div>
+                          <button className="button is-rounded startWorkoutBut" onClick={() => {
+                          setTimerModalIsDisplayed(true)
+                        }}>Start Workout
+                      </button>
+                      </div>
+                      <button className="edit__but" onClick={() => {
+                              setShowEditModal(true)
+                            }}><img className="pencil" src="https://img.icons8.com/color/48/000000/edit--v1.png"/></button>
+                            <div className="setInfo">
+                              <h3>Sets: {bundleAssociation.sets}</h3>
+                              <h3>Sets Time: {bundleAssociation.setsTimeMinutes}:{bundleAssociation.setsTimeSeconds > 10 ? bundleAssociation.setsTimeSeconds : `0${bundleAssociation.setsTimeSeconds}`}</h3>
+                              <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds > 10 ? 
+                                bundleAssociation.cooldownTimeSeconds : `0${bundleAssociation.cooldownTimeSeconds}`}</h3>
+                                <h3>Reps: {bundleAssociation.reps}</h3>
+                                <p>Notes: {bundleAssociation.notes}</p>
+                                </div>
+                                              </div>
+                    </div>
           })
         }
 

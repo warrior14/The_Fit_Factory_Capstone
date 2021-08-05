@@ -17,3 +17,6 @@ code {
   font-family: 'Pirata One', cursive;
 }
 
+.nav__div {
+  margin-bottom: -3em;
+}

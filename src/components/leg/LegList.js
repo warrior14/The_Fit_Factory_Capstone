@@ -30,7 +30,7 @@ export const LegList = () => {
 
   return (
     <>
-
+    <div className="legDivs">
       {exerciseModal}
 
       <h1 className="legHeader">Leg Exercises</h1>
@@ -44,6 +44,7 @@ export const LegList = () => {
           })
         }
 
+      </div>
       </div>
     </>
   )

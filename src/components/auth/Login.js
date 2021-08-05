@@ -55,8 +55,7 @@ export const Login = () => {
                 <section>
                     <form className="form--login" onSubmit={handleLogin}>
                         <img className="logoLogin" src="./images/logo2.PNG" alt=""></img>
-                        <h1>"We Are The Sheep And Joe Is Our Shepherd! - Luke Madrazo"</h1>
-                        <h2>Please Sign In To The Fit Factory</h2>
+                        <h1>"We Are The Sheep And Joe Is Our Shepherd!"</h1>
                         <fieldset>
                             <label htmlFor="inputEmail"> Email Address </label>
                             <input type="email"

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ChestContext } from "./ChestProvider.js";
 import { ChestCard } from "./ChestCard.js";
 import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
+import "./Chest.css"
 
 
 export const ChestList = () => {
@@ -31,6 +32,7 @@ export const ChestList = () => {
 
   return (
     <>
+    <div className="chestDiv">
 
 
   {exerciseModal}
@@ -46,6 +48,7 @@ export const ChestList = () => {
           })
         }
 
+      </div>
       </div>
     </>
   )

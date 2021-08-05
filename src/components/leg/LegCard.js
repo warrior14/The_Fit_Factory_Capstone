@@ -22,6 +22,7 @@ export const LegCard = ({exercise, setShowModal, setCurrentExercise}) => {
         <h1 className="leg">{exercise.name}</h1>
         <p className="cloown">{exercise.description}</p>
         <p className="brown">Category: {exercise.muscleCategory.name}</p>
+        {/* <p>Example: {exercise.photo}</p> */}
         <button className="legButton" onClick={() => { 
             setCurrentExercise(exercise)
             setShowModal(true)
