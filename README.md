@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# The Fit Factory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup: Follow these steps exactly:
+1. Use terminal to clone this repository
+1. `cd` into the directory it creates
+```
+git clone git@github.com:warrior14/The_Fit_Factory_Capstone.git
+cd fitfactory-capstone
+```
+1. Create an `api` directory outside of the project directory.
+1. In the `api` directory, create a copy of the `database.json.example` and remove the `.example` extension.
+1. Run `json-server -p 8088 -w database.json` from the `api` directory.
+1. Run `npm install` and wait for all dependencies to be installed.
+1. Run `npm start` to verify that installation was successful.
 
-## Available Scripts
+**Note:** Your `database.json` file is already in the `.gitignore` file for this project, so it will never be added to the repo or pushed to Github.
 
-In the project directory, you can run:
+## What is The Fit Facotry?
+The Fit Factory is a workout companion app that will educate and motivate someone who wants to start their fitness journey. As someone who has a passion for health and fitness, there is nothing I find more rewarding than helping someone transform their body and lifestyle for the better. Having more than a decade’s experience in personal training, the most common problems I encounter are that people don’t know the correct form for the exercises they are trying to do (which could lead to injury) and that they lack the motivation to stay disciplined on their workout regimen. These issues could hinder or deter their progress and make them revert to their unhealthy lifestyles. Although there are countless exercise apps out there, they can be very confusing, misleading and expensive. My free app will provide simple and easy to follow exercises that users can implement in their workout routine. In addition, it will display a timer/cooldown countdown for each exercise chosen that includes text to speech feature with Web Speech external API that will communicate with the user.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I built the app with the ReactJS library and incorporated the Web Speech API. The Fit Factory is a CRUD app and is implemented by a flat data-structure utilizing JSON Server along with being styled with Bulma framework and CSS.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I built this app for my Front-End Capstone project for Nashville Software School.
 
-### `npm test`
+The following are examples of how the resources in your API should look once it is populated with data from the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Note:** This version of The Fit Factory has mock authentication and does not provide secure storage. Please do not save sensitive information in this database!
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### users
+```json
+  {
+      "id": 1,
+      "name": "Luke Madrazo",
+      "email": "fitfam@gmail.com",
+      "password": "fitfam"
+    }
+```
+### exercises
+```json
+    {
+      "id": 1,
+      "name": "Barbell Squats",
+      "description": "The back squat is a basic barbell strength exercise for the lower body with an emphasis on the quads, hamstrings, and glutes. HOW TO DO THIS EXERCISE: Take the bar out of the rack with it resting on your rear shoulder muscles. Take two big steps back and stand with your feet roughly shoulder-width apart, toes pointing slightly out. Keep your spine in alignment by looking at a spot on the floor about two metres in front of you, then “sit” back and down as if you’re aiming for a chair. Descend until your hip crease is below your knee. Keep your weight on your heels as you drive back up.",
+      "muscleCategoryId": 1
+    }
+```
+### muscleCategories
+```json
+   {
+      "id": 1,
+      "name": "Leg Exercise"
+    }
+```
+### bundleAssociation
+```json
+ {
+      "id": 2,
+      "bundleId": 2,
+      "exerciseId": 2,
+      "sets": "2",
+      "setsTimeMinutes": "0",
+      "setsTimeSeconds": "5",
+      "cooldownTimeMinutes": 1,
+      "cooldownTimeSeconds": 0,
+      "reps": "30",
+      "notes": "i like this one",
+      "coolDownTimeMinutes": "0",
+      "coolDownTimeSeconds": "5"
+    }
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
