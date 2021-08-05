@@ -34,3 +34,77 @@
       font-weight: 500;
       font-style: italic;
   }
+
+  .header {
+      text-align: center;
+      margin-bottom: 0.5em;
+      font-family: 'Pirata One', cursive;
+  }
+
+  .slogan {
+      text-align: center;
+      margin-bottom: 1em;
+  }
+
+  .intro {
+      margin-bottom: 4em;
+      text-align: center;
+      font-size: 20px;
+  }
+
+  .testimonials {
+      text-align: center;
+      margin-bottom: 4em;
+      margin-top: 2em;
+  }
+
+  .testimonialHeader {
+      margin-bottom: 1em;
+      font-size: 21px;
+      font-family: 'Pirata One', cursive;
+      text-decoration: underline;
+  }
+
+  .testimonialParagraph {
+      margin-bottom: 0.5em;
+  }
+
+ .clients {
+     height: 345px;
+     width: 345px;
+     border-radius: 10px;
+ }
+
+ .testimonial-col {
+     flex-basis: 44%;
+     border-radius: 10px;
+     margin-bottom: 5%;
+     text-align: left;
+     background: #dbcdcd;
+     padding: 25px;
+     cursor: pointer;
+     display: flex;
+     width: 58.6%;
+ }
+
+ .testimonial-col p {
+    padding: 0;
+}
+
+.testimonial-col .fa {
+    color: #f55e53;
+}
+
+.row {
+    margin-left: 26em;
+    margin-top: 2em;
+}
+
+
+.home__div {
+    background-color: rgb(252, 249, 249);
+}
+
+.testi {
+    margin-bottom: 5em;
+}

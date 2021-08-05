@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect }from "react";
 import { BundleAssociationContext } from "./BundleAssociationProvider"
+import "./BundleAssociation.css"
 
 
 
@@ -15,10 +16,10 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
     bundleId: "",
     exerciseId: currentExercise.id,
     sets: "",
-    setsTimeMinutes: "",
-    setsTimeSeconds: "",
-    cooldownTimeMinutes: "",
-    cooldownTimeSeconds: "",
+    setsTimeMinutes: "0",
+    setsTimeSeconds: "0",
+    cooldownTimeMinutes: "0",
+    cooldownTimeSeconds: "0",
     reps: "",
     notes: ""
   })
@@ -42,45 +43,53 @@ export const AddExerciseModal = ({setShowModal, currentExercise}) => {
 
 
       <div className="modal is-active">
-          <div className="modal-background"></div>
-          <div className="modal-content">
-              <h1>Add This Exercise To A Bundle!</h1>
-              <label>Amount Of Sets:
-                <input onChange={(event) => {handleExerciseInput(event)}} id="sets" placeholder="Amount Of Sets" type='number' min="1" className="sets"/>
+          <div className="modal-background areYouSure"></div>
+          <div className="modal-content sureBundle">
+              <h1 className="headerBundle">Add This Exercise To A Bundle!</h1>
+              <div className="setAmtDiv">
+                <label className="labelSection">Amount Of Sets:
+                  <input className="set_amount" onChange={(event) => {handleExerciseInput(event)}} id="sets" placeholder="Amount Of Sets" type='number' min="1"/>
+                </label>
+              </div>
+              <div className="setTimeDiv">
+                <label className="labelSection">Sets Time:
+                  <input className="set_amount"  onChange={(event) => {handleExerciseInput(event)}} id="setsTimeMinutes" type="number" defaultValue="0" className="timeInput" placeholder="Min" min="0" max="5" step="1"></input>
+                  <input className="set_amount"  onChange={(event) => {handleExerciseInput(event)}} id="setsTimeSeconds" type="number" defaultValue="0" placeholder="Sec" min="0" max="59"  step="1"></input>
+                </label>
+              </div>
+              <label className="labelSection">Cool Down Time
+              <input className="set_amount"  onChange={(event) => {handleExerciseInput(event)}} id="cooldownTimeMinutes" type="number" defaultValue="0" placeholder="Min" min="0" max="5" step="1"></input>
+                <input className="set_amount"  onChange={(event) => {handleExerciseInput(event)}} id="cooldownTimeSeconds" type="number" defaultValue="0" placeholder="Sec" min="0" max="59"  step="1"></input>
               </label>
-              <label>Sets Time:
-                <input onChange={(event) => {handleExerciseInput(event)}} id="setsTimeMinutes" type="number" className="timeInput" placeholder="Min" min="0" max="5" step="1"></input>
-                <input onChange={(event) => {handleExerciseInput(event)}} id="setsTimeSeconds" type="number" className="timeInput" placeholder="Sec" min="0" max="59"  step="1"></input>
-              </label>
-              <label>Cool Down Time
-              <input onChange={(event) => {handleExerciseInput(event)}} id="cooldownTimeMinutes" type="number" className="timeInput" placeholder="Min" min="0" max="5" step="1"></input>
-                <input onChange={(event) => {handleExerciseInput(event)}} id="cooldownTimeSeconds" type="number" className="timeInput" placeholder="Sec" min="0" max="59"  step="1"></input>
-              </label>
-              <input type="number" min="1" id="reps" placeholder="Reps" onChange={(event) => {handleExerciseInput(event)}}></input>
-              <textarea id="notes" placeholder="Type Notes..." onChange={(event) => {handleExerciseInput(event)}}></textarea>
+              <div className="repDiv">
+                <input className="repsInput"  type="number" min="1" id="reps" placeholder="Reps" onChange={(event) => {handleExerciseInput(event)}}></input>
+              </div>
+              <div className="notesDiv">
+                <textarea className="notesArea" id="notes" placeholder="Type Notes..." onChange={(event) => {handleExerciseInput(event)}}></textarea>
+              </div>
 
+              <div>
+                <select className="bundle_select" onChange={(event) => {
+                  let newExercise = {...exercise}
+                  let bundle = JSON.parse(event.target.value)
+                  newExercise["bundleId"] = bundle.id
+                  setExercise(newExercise)
+                
+                }} name="arms" id="armsSelect">
+                  <option className="bundleSelect">Select A Bundle</option>
+                { 
+                  userBundleList.map(bundle => {return <option value={JSON.stringify(bundle)}>{bundle.name}</option>}) 
+                }
+                </select>
+              </div>
 
-              <select onChange={(event) => {
-                let newExercise = {...exercise}
-                let bundle = JSON.parse(event.target.value)
-                newExercise["bundleId"] = bundle.id
-                setExercise(newExercise)
-               
-              }} name="arms" id="armsSelect">
-                <option>Select A Bundle</option>
-              { 
-                userBundleList.map(bundle => {return <option value={JSON.stringify(bundle)}>{bundle.name}</option>}) 
-              }
-              </select>
-
-
-              <button className="button" onClick={() => {
+              <button className="button is-rounded addBut" onClick={() => {
                 alert("Exercise has been added to your bundle!")
                 setShowModal(false)
                 postFunctionToBundle();
               }}>Add</button>
           </div>
-          <button onClick={() =>{setShowModal(false)}}className="modal-close is-large" aria-label="close"></button>
+          <button onClick={() =>{setShowModal(false)}} className="modal-close is-large exitBundle" aria-label="close"></button>
       </div>
     )
 }

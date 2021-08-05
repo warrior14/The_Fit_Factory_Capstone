@@ -1,9 +1,18 @@
-.bundleButton {
-    border-radius: 40%;
+.bundle {
+    text-align: center;
+    margin: 3em 0 3em 0;
 }
 
-.bundleHeader {
-    font-size: 3em;
+.bundleButton {
+    border-radius: 40%;
+    cursor: pointer;
+    margin: 10px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.headerBundle {
+    font-size: 2em;
 }
 
 .createBundleButton {
@@ -44,7 +53,7 @@ margin: 0;
 }
 
 .hero {
-    font-family: cursive;
+    font-family: 'Bree Serif', serif;
     font-size: 3em;
 }
 
@@ -116,7 +125,8 @@ margin: 0;
     /* Set a specific height */
     min-height: 200px;
   
-  
+    overflow: hidden;
+
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -131,6 +141,8 @@ margin: 0;
     margin: auto;
     border-radius: 55px;
     border: 2px solid black;
+    overflow: hidden;
+
     text-align: center;
 }
 
@@ -139,17 +151,290 @@ margin: 0;
     font-size: 18px;
     text-align: center;
     margin: 5px;
+    margin-right: 5em;
+    margin-left: 4em;
+    font-family: 'Bree Serif', serif;
+    overflow: hidden;
+
 }
 
 .createBut {
     margin: 5px;
+    font-family: 'Bree Serif', serif;
 }
 
 .exitBundle {
-    background-color: goldenrod;
+    background-color: rgb(209, 174, 84);
     font-size: 1em;
 }
 
-.creationBunlde {
+.creationBundle {
+    font-size: 1.5em;
+    margin: 2em 0 2em 22em;
+    font-family: 'Bree Serif', serif;
+    background-color: rgb(235, 225, 225);
+
+}
+
+.hero {
+    margin: 2em 0 1em 10.5em;
+    font-family: 'Bree Serif', serif;
+}
+
+.areYouSure {
+    font-family: 'Bree Serif', serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://www.wallgroup.com/media/catalog/product/cache/ce339dd56671d6bccbcac0916ee6b376/w/0/w03193-small.jpg");
+
+    /* Set a specific height */
+    min-height: 200px;
+  
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sureBundle {
+    background-color: rgb(235, 225, 225);
+    width: 25%;
+    padding: 1em;
+    margin: auto;
+    border-radius: 55px;
+    border: 2px solid black;
+    text-align: center;
+    font-family: cursive;
+}
+
+.sureHeader {
+    margin: 5px;
+    font-size: 30px;
+    font-family: 'Bree Serif', serif;
+}
+
+.exerciseInput {
+    margin: 5px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: 'Bree Serif', serif;
+    text-align: center;
+}
+
+.textAreaModal {
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-family: 'Bree Serif', serif;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.divButtons {
+    display: flex;
+    margin-left: 6em;
+    margin-top: 5px;
+    font-family: 'Bree Serif', serif;
+}
+
+.saveBut {
+    margin-right: 5px;
+    font-family: 'Bree Serif', serif;
+}
+
+
+.startExecise {
+    font-family: 'Bree Serif', serif;
     font-size: 2em;
 }
+
+
+
+.beginButton {
+    margin-right: 5px;
+    font-family: 'Bree Serif', serif;
+    border: 1px solid black;
+    margin-top: 10px
+
+}
+
+.stopButton {
+    margin-right: 5px;
+    font-family: 'Bree Serif', serif;
+    border: 1px solid black;
+    margin-top: 10px
+}
+
+
+.exerciseTitle {
+    font-size: 30px;
+}
+
+.title {
+    font-size: 40px;
+}
+
+.pencil {
+    width: 20px;
+}
+
+.set_amount {
+    margin: 5px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: 'Bree Serif', serif;
+    text-align: center;
+}
+
+.setAmtDiv {
+    margin: 5px;
+}
+
+.repsDiv {
+    margin: 10px;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    border-radius: 10px;
+}
+
+.repsInput {
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.notesDiv {
+    margin: 10px;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+
+.notesArea {
+    margin: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    border-radius: 10px;
+}
+
+.timeInput {
+    border-radius: 10px;
+    margin: 5px;
+    font-family: 'Bree Serif', serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.labelSection {
+    font-size: 20px;
+}
+
+.bundleSelect {
+    border-radius: 10px;
+    font-family: 'Bree Serif', serif;
+}
+
+.addBut {
+    font-family: 'Bree Serif', serif;
+    border: 1px solid black;
+}
+
+.bundle_select {
+    border-radius: 10px;
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+    padding: 3px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.trashIcon {
+    width: 30px;
+    cursor: pointer;
+    mix-blend-mode: multiply;
+}
+
+.pencilIcon {
+    width: 30px;
+    cursor: pointer;
+    mix-blend-mode: multiply;
+}
+
+.bundle__name {
+    font-size: 25px;
+    margin-bottom: 1em;
+}
+
+.cancel_but {
+    font-family: 'Bree Serif', serif;
+    border: 1px solid black;
+}
+
+.save_but {
+    font-family: 'Bree Serif', serif;
+    border: 1px solid black;
+    margin-right: 10px;
+}
+
+.edit_div {
+    margin-bottom: 2em;
+}
+
+.editInput {
+    border-radius: 10px;
+    text-align: center;
+    padding: 2px;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-bottom: 1em;
+}
+
+.workoutName {
+    font-family: cursive;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    margin-bottom: 1em;
+    font-size: 40px;
+}
+
+.exercise__name {
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    margin-bottom: 1em;
+    font-size: 30px;
+}
+
+.trashPic {
+    font-size: 20px;
+}
+
+.describe {
+    text-align: center;
+    margin: 2em;
+}
+
+.workingOut {
+    margin-left: 39em;
+    margin-bottom: 4em;
+}
+
+.startWorkoutBut {
+    font-family: 'Bree Serif', serif;
+    margin-bottom: 1em;
+    border: 1px solid black;
+}
+
+.edit__but {
+    border-radius: 10px;
+    margin-left: 4em;
+    margin-bottom: 2em;
+}
+
+.bundleDiv {
+    background-color: rgb(252, 249, 249);
+}
+

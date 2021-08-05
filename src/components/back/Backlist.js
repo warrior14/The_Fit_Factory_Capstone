@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { BackContext } from "./BackProvider.js";
 import { BackCard } from "./BackCard.js";
 import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
+import "./Back.css"
 
 
 
@@ -29,6 +30,7 @@ export const BackList = () => {
 
   return (
     <>
+    <div className="backDiv">
       {exerciseModal}
       <h1 className="backHeader">Back Exercises</h1>
       <div className="back">
@@ -39,6 +41,7 @@ export const BackList = () => {
           })
         }
 
+      </div>
       </div>
     </>
   )

@@ -24,17 +24,19 @@ export const BundleCard = ({userBundle}) => {
     let editNameBundleSection;
     if (editBundleName) {
         editNameBundleSection = 
-        <div>
-            <input onChange={(event) => {
-                let editedBundle = {...bundleToEdit}
-                editedBundle["name"] = event.target.value
-                setBundleToEdit(editedBundle)
-            }}placeholder="name" defaultValue={userBundle.name} ></input>
-            <button onClick={() => {
+        <div className="edit_div">
+            <div>
+                <input className="editInput" onChange={(event) => {
+                    let editedBundle = {...bundleToEdit}
+                    editedBundle["name"] = event.target.value
+                    setBundleToEdit(editedBundle)
+                }}placeholder="name" defaultValue={userBundle.name} ></input>
+            </div>
+            <button className="button is-rounded save_but" onClick={() => {
                 editBundle(bundleToEdit)
                 setEditBundleName(false)
             }}>Save</button>
-            <button onClick={() => {
+            <button className="button is-rounded cancel_but" onClick={() => {
                 setEditBundleName(false)
             }}>Cancel</button>
         </div>
@@ -57,7 +59,7 @@ export const BundleCard = ({userBundle}) => {
         {editNameBundleSection}
         <button onClick={() => {
             setEditBundleName(true)
-        }}className="editBundleName"><img src="https://img.icons8.com/color/48/000000/edit--v1.png"/></button>
+        }}className="editBundleName"><img className="trashIcon" src="https://img.icons8.com/color/48/000000/edit--v1.png"/></button>
         <Link to={`/bundle/associationList/${userBundle.id}`}>
             <button className="bundleButton" onMouseOver={() => {
                 logCurrentBundle(userBundle);
@@ -65,7 +67,7 @@ export const BundleCard = ({userBundle}) => {
         </Link>
         <button className="deleteBundle" onClick={() => {
                 setDeleteTheBundleModal(true)
-            }}><img src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button>
+            }}><img className="pencilIcon" src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button>
     </section>) 
 }
  
