@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+### ERD for my capstone: https://dbdiagram.io/d/610a0f472ecb310fc3bc7b29
+
+![Capstone ERD](./public/images/erd.PNG "ERD for The Fit Factory")
+
+
+
+
+
+### Wireframing for my capstone: https://miro.com/app/board/o9J_l6LWVeE=/
+
+![Capstone Wireframe](./public/images/wireframe.PNG "Wireframe for The Fit Factory") 
