@@ -71,3 +71,15 @@ The following are examples of how the resources in your API should look once it 
     }
 ```
 
+
+### ERD for my capstone: https://dbdiagram.io/d/610a0f472ecb310fc3bc7b29
+
+![Capstone ERD](./public/images/erd.PNG "ERD for The Fit Factory")
+
+
+
+
+### Wireframing for my capstone: https://miro.com/app/board/o9J_l6LWVeE=/
+
+![Capstone Wireframe](./public/images/wireframe.PNG "Wireframe for The Fit Factory") 
+
