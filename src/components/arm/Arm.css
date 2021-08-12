@@ -33,3 +33,16 @@
 .armDiv {
     background-color: rgb(252, 249, 249);
 }
+
+.armButton {
+    transition: all .2s ease-in-out;
+}
+
+.armButton:hover {
+    transform: scale(1.2);
+}
+
+.armButton {
+    margin-left: 53em;
+}
+

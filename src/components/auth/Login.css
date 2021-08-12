@@ -56,3 +56,28 @@
     mix-blend-mode: multiply;
     border-radius: 2em;
   }
+
+  .loginButton {
+    transition: all .2s ease-in-out;
+  }
+
+  .loginButton:hover {
+    transform: scale(1.3);
+  }
+
+  a {
+    transition: all .2s ease-in-out;
+  }
+
+  .a:hover {
+    transform: scale(1.2);
+  }
+
+  .link--register {
+    transition: all .2s ease-in-out;
+  }
+
+  .link--register:hover {
+    transform: scale(1.3);
+  }
+

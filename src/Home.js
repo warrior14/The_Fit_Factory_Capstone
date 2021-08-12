@@ -66,7 +66,7 @@ export const Home = () => (
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="theClients">
                     <img className="clients" src="./images/afk4.JPG" alt=""/>
                     <img className="clients" src="./images/afk2.jpg" alt=""/>
                     <img className="clients" src="./images/afk5.jpg" alt=""/>

@@ -37,3 +37,15 @@
 .legDivs {
     background-color: rgb(252, 249, 249);
 }
+
+.legButton {
+    transition: all .2s ease-in-out;
+}
+
+.legButton:hover {
+    transform: scale(1.2);
+}
+
+.legButton {
+    margin-left: 53em;
+}
