@@ -108,3 +108,27 @@
 .testi {
     margin-bottom: 5em;
 }
+
+.row {
+    transition: all .2s ease-in-out;
+}
+
+.row:hover {
+    transform: scale(1.1);
+}
+
+.theClients {
+    transition: all .2s ease-in-out;
+}
+
+.theClients:hover {
+    transform: scale(1.1);
+}
+
+.testimonialHeader {
+    transition: all .2s ease-in-out;
+}
+
+.testimonialHeader:hover {
+    transform: scale(1.5);
+}

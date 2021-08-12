@@ -36,3 +36,15 @@
 .chestDiv {
     background-color: rgb(252, 249, 249);
 }
+
+.chestButton {
+    transition: all .2s ease-in-out;
+}
+
+.chestButton:hover {
+    transform: scale(1.2);
+}
+
+.chestButton {
+    margin-left: 53em;
+}

@@ -35,3 +35,15 @@
 .backDiv {
     background-color: rgb(252, 249, 249);
 }
+
+.backButton {
+    transition: all .2s ease-in-out;
+}
+
+.backButton:hover {
+    transform: scale(1.2);
+}
+
+.backButton {
+    margin-left: 53em;
+}

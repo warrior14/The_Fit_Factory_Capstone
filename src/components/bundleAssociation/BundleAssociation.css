@@ -170,11 +170,12 @@ margin: 0;
 
 .creationBundle {
     font-size: 1.5em;
-    margin: 2em 0 2em 22em;
+    margin: 2em 0 2em 10em;
     font-family: 'Bree Serif', serif;
     background-color: rgb(235, 225, 225);
-
 }
+
+
 
 .hero {
     margin: 2em 0 1em 10.5em;
@@ -438,3 +439,134 @@ margin: 0;
     background-color: rgb(252, 249, 249);
 }
 
+.creationBundle {
+    transition: all .2s ease-in-out;
+}
+
+.creationBundle:hover {
+    transform: scale(1.4);
+}
+
+.editBundleName {
+    transition: all .2s ease-in-out;
+}
+
+.editBundleName:hover {
+    transform: scale(1.2);
+}
+
+.deleteBundle {
+    transition: all .2s ease-in-out; 
+}
+
+.deleteBundle:hover {
+    transform: scale(1.2);
+}
+
+.bundleButton {
+    transition: all .2s ease-in-out;
+}
+
+.bundleButton:hover {
+    transform: scale(1.1);
+}
+
+.addBut {
+    transition: all .2s ease-in-out;
+}
+
+.addBut:hover {
+    transform: scale(1.2);
+}
+
+.createBut {
+    transition: all .2s ease-in-out;
+}
+
+.createBut:hover {
+    transform: scale(1.2);
+}
+
+.hero {
+    margin-left: 10.5em;
+}
+
+.deleteExerciseButton {
+    transition: all .2s ease-in-out; 
+}
+
+.deleteExerciseButton:hover {
+    transform: scale(1.2);
+}
+
+.save_but {
+    transition: all .2s ease-in-out; 
+}
+
+.save_but:hover {
+    transform: scale(1.2);
+}
+
+.cancel_but {
+    transition: all .2s ease-in-out; 
+}
+
+.cancel_but:hover {
+    transform: scale(1.2);
+}
+
+.startWorkoutBut {
+    transition: all .2s ease-in-out; 
+}
+
+.ac {
+    margin-left: 12.5em;
+}
+
+.edit__but {
+    transition: all .2s ease-in-out; 
+}
+
+.mayo {
+    margin-left: 26em;
+}
+
+.saveBut {
+    transition: all .2s ease-in-out;  
+}
+
+.saveBut:hover {
+    transform: scale(1.1);
+}
+
+.beginButton {
+    transition: all .2s ease-in-out;  
+}
+
+.beginButton:hover {
+    transform: scale(1.1);
+}
+
+.edit__but:hover {
+    transform: scale(1.2);
+}
+
+.stopButton {
+    transition: all .2s ease-in-out;  
+}
+
+.stopButton:hover {
+    transform: scale(1.1);
+}
+
+.startWorkoutBut:hover {
+    transform: scale(1.2);
+}
+
+.bb {
+    margin-right: -30px;
+}
+
+.workingOut {
+    margin-left: 43em;
+}

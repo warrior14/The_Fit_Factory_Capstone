@@ -27,12 +27,12 @@ export const BundleList = () => {
   return (
     <>
     <div className="bundleDiv">
-      <h1 className="hero">Workout Bundles</h1>
-      <button className="button is-rounded creationBundle" onClick={() => {
+      <h1 className="hero ac">Workout Bundles</h1>
+      <button className="button is-rounded creationBundle  mayo" onClick={() => {
         setShowBundleModal(true);
       }}>Create A Workout Bundle</button>
         
-      <div>
+      <div className="bb">
         {bundleCreationModal}
           {
             userBundleList.map(userBundle => {
