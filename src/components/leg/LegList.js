@@ -34,7 +34,39 @@ export const LegList = () => {
       {exerciseModal}
 
       <h1 className="legHeader">Leg Exercises</h1>
-    
+      <div className="legGifDiv">
+
+          <div className="gifText">
+              <img className="lg1" src="https://i.pinimg.com/originals/68/01/cb/6801cb5f259e4e3fb793912c53366b7e.gif" alt=""/>
+              <p className="leggy" >Barbell Squats</p>
+          </div>
+          <div className="gifText">
+            <img className="lg1" src="https://i1.wp.com/www.strengthlog.com/wp-content/uploads/2020/11/Deadlift.gif?fit=600%2C600&ssl=1" alt=""/>
+            <p className="leggy">Barbell Deadlift</p>
+          </div>
+
+          <div className="gifText">
+            <img className="lg1" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2017/10/legpress-1509458589.gif" alt=""/>
+            <p className="leggy">Leg Press</p>
+          </div>  
+          
+          <div className="gifText">
+          <img className="lg1" src="https://thumbs.gfycat.com/HarmfulIndelibleHarpyeagle-max-1mb.gif" alt=""/>
+          <p className="leggy">Standing Calf Raises</p>
+          </div>
+
+
+          <div className="gifText">    
+          <img className="lg1" src="https://thumbs.gfycat.com/ConsiderateSaneCony-max-1mb.gif" alt=""/>
+          <p className="leggy">Walking Lunges</p> 
+          </div>
+
+          <div className="gifText">
+            <img className="lg1"  src="https://i2.wp.com/www.strengthlog.com/wp-content/uploads/2020/04/hack-squat-machine.gif?fit=600%2C600&ssl=1" alt=""/>
+            <p className="leggy">Hack Squats</p>  
+          </div>
+
+      </div>
 
       <div className="legs">
         

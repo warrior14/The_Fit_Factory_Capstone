@@ -49,3 +49,47 @@
 .legButton {
     margin-left: 53em;
 }
+
+.legGifDiv {
+    display: flex;
+    margin-bottom: 40px; 
+}
+
+.lg1 {
+    height: 200px;
+    width: 200px;
+}
+
+.lg1 {
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+}
+
+.lg1 {
+    height: 200px;
+    width: 200px;
+}
+
+.gifText {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.lg1 {
+    transition: all .2s ease-in-out;
+}
+
+.lg1:hover {
+    transform: scale(1.2);
+    border: 2px solid goldenrod;
+}
+
+
+.leggy {
+    margin-top: 20px;
+    font-weight: 900;
+}

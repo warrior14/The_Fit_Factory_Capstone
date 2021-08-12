@@ -31,6 +31,45 @@ export const ArmList = () => {
     <div className="armDiv">
       {exerciseModal}
       <h1 className="armHeader">Arm Exercises</h1>
+
+      <div className="legGifDiv">
+
+<div className="gifText">
+    <img className="lg1" src="https://thumbs.gfycat.com/AlarmingVeneratedFawn-max-1mb.gif" alt=""/>
+    <p className="leggy" >Hammer Curls</p>
+</div>
+<div className="gifText">
+  <img className="lg1" src="https://thumbs.gfycat.com/FluffyCarefulBaboon-size_restricted.gif" alt=""/>
+  <p className="leggy">Standing Dumbell Press</p>
+</div>
+
+<div className="gifText">
+  <img className="lg1" src="https://d2culxnxbccemt.cloudfront.net/bowl/content/uploads/2020/10/13101949/tricep-2.gif" alt=""/>
+  <p className="leggy">Overhead Extensions</p>
+</div>  
+
+<div className="gifText">
+<img className="lg1" src="https://i1.wp.com/www.strengthlog.com/wp-content/uploads/2020/12/Barbell-biceps-curl.gif?fit=600%2C600&ssl=1" alt=""/>
+<p className="leggy">Barbell Curls</p>
+</div>
+
+
+<div className="gifText">    
+<img className="lg1" src="https://i0.wp.com/thumbs.gfycat.com/QuaintMeanBuckeyebutterfly-size_restricted.gif?w=1155&h=840" alt=""/>
+<p className="leggy">Dumbbell Lateral Raises</p> 
+</div>
+
+<div className="gifText">
+  <img className="lg1"  src="https://media.self.com/photos/5e6be6e61e8d0000080851ee/master/w_320%2Cc_limit/dumbbell-bent-over-triceps-kick-back-Cookie_051%2520(1).gif" alt=""/>
+  <p className="leggy">Tricep Kickbacks</p>  
+</div>
+
+</div>
+
+
+
+
+
       <div className="arms">
         
         {
