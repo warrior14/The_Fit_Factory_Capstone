@@ -101,8 +101,8 @@ export const BundleAssociationList = () => {
                             }}><img className="pencil" src="https://img.icons8.com/color/48/000000/edit--v1.png"/></button>
                             <div className="setInfo">
                               <h3>Sets: {bundleAssociation.sets}</h3>
-                              <h3>Sets Time: {bundleAssociation.setsTimeMinutes}:{bundleAssociation.setsTimeSeconds > 10 ? bundleAssociation.setsTimeSeconds : `0${bundleAssociation.setsTimeSeconds}`}</h3>
-                              <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds > 10 ? 
+                              <h3>Sets Time: {bundleAssociation.setsTimeMinutes}:{bundleAssociation.setsTimeSeconds >= 10 ? bundleAssociation.setsTimeSeconds : `0${bundleAssociation.setsTimeSeconds}`}</h3>
+                              <h3>Cool Down Time: {bundleAssociation.cooldownTimeMinutes}:{bundleAssociation.cooldownTimeSeconds >= 10 ? 
                                 bundleAssociation.cooldownTimeSeconds : `0${bundleAssociation.cooldownTimeSeconds}`}</h3>
                                 <h3>Reps: {bundleAssociation.reps}</h3>
                                 <p>Notes: {bundleAssociation.notes}</p>
