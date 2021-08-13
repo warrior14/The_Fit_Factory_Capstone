@@ -543,6 +543,14 @@ margin: 0;
     transition: all .2s ease-in-out;  
 }
 
+.exitBundle {
+    transition: all .2s ease-in-out;  
+}
+
+.exitBundle:hover {
+    transform: scale(1.4);
+}
+
 .beginButton:hover {
     transform: scale(1.1);
 }
