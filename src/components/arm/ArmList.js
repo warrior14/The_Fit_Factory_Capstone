@@ -35,7 +35,7 @@ export const ArmList = () => {
       <div className="legGifDiv">
 
 <div className="gifText">
-    <img className="lg1" src="https://thumbs.gfycat.com/AlarmingVeneratedFawn-max-1mb.gif" alt=""/>
+    <img className="lg1" src="https://www.strengthlog.com/wp-content/uploads/2020/02/Hammer-curl.gif" alt=""/>
     <p className="leggy" >Hammer Curls</p>
 </div>
 <div className="gifText">
@@ -49,7 +49,7 @@ export const ArmList = () => {
 </div>  
 
 <div className="gifText">
-<img className="lg1" src="https://i1.wp.com/www.strengthlog.com/wp-content/uploads/2020/12/Barbell-biceps-curl.gif?fit=600%2C600&ssl=1" alt=""/>
+<img className="lg1" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2017/10/barbellcurl-1509456994.gif" alt=""/>
 <p className="leggy">Barbell Curls</p>
 </div>
 
