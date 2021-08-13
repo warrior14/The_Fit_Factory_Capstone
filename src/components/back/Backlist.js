@@ -46,7 +46,7 @@ export const BackList = () => {
 </div>
 
 <div className="gifText">
-  <img className="lg1" src="https://global-uploads.webflow.com/5d1d0d3f53ced35a29dbe169/5ea30e7782e991a7e21fcd09_wide-grip-lat-pulldown-exercise-anabolic-aliens.gif" alt=""/>
+  <img className="lg1" src="https://9to5strength.com/wp-content/uploads/2016/10/1qdxxb.gif" alt=""/>
   <p className="leggy">Seated Lat Pulldowns</p>
 </div>  
 
