@@ -3,6 +3,8 @@ import { BackContext } from "./BackProvider.js";
 import { BackCard } from "./BackCard.js";
 import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 import "./Back.css"
+import { JelloAnimation } from "../animations/AnimationHelper";
+import {StyleRoot} from 'radium';
 
 
 
@@ -29,50 +31,44 @@ export const BackList = () => {
   }
 
   return (
-    <>
-    <div className="backDiv">
+    <StyleRoot>
+    <div className="backDiv" style={JelloAnimation(2)}>
       {exerciseModal}
       <h1 className="backHeader">Back Exercises</h1>
 
       <div className="legGifDiv">
 
-<div className="gifText">
-    <img className="lg1" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2017/10/seatedcablerow-1509373251.gif" alt=""/>
-    <p className="leggy" >Seated Cable Rows</p>
-</div>
-<div className="gifText">
-  <img className="lg1" src="https://i2.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Barbell-Shrug.gif?fit=600%2C600&ssl=1" alt=""/>
-  <p className="leggy">Barbell Shrugs</p>
-</div>
+        <div className="gifText">
+            <img className="lg1" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2017/10/seatedcablerow-1509373251.gif" alt=""/>
+            <p className="leggy" >Seated Cable Rows</p>
+        </div>
+        <div className="gifText">
+          <img className="lg1" src="https://i2.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Barbell-Shrug.gif?fit=600%2C600&ssl=1" alt=""/>
+          <p className="leggy">Barbell Shrugs</p>
+        </div>
 
-<div className="gifText">
-  <img className="lg1" src="https://9to5strength.com/wp-content/uploads/2016/10/1qdxxb.gif" alt=""/>
-  <p className="leggy">Seated Lat Pulldowns</p>
-</div>  
+        <div className="gifText">
+          <img className="lg1" src="https://9to5strength.com/wp-content/uploads/2016/10/1qdxxb.gif" alt=""/>
+          <p className="leggy">Seated Lat Pulldowns</p>
+        </div>  
 
-<div className="gifText">
-<img className="lg1" src="https://tiu-assets.s3-us-west-2.amazonaws.com/2018/12/Chyna-Barbell-Bent-Over-Row.gif" alt=""/>
-<p className="leggy">Barbell Bent Over Rows</p>
-</div>
-
-
-<div className="gifText">    
-<img className="lg1" src="https://www.sparkpeople.com/assets/exercises/Assisted-Pull-up-Machine.gif" alt=""/>
-<p className="leggy">Assisted Pull Ups</p> 
-</div>
-
-<div className="gifText">
-  <img className="lg1"  src="https://thumbs.gfycat.com/RapidOrganicIsabellinewheatear-size_restricted.gif" alt=""/>
-  <p className="leggy">Hyperextensions</p>  
-</div>
-
-</div>
+        <div className="gifText">
+        <img className="lg1" src="https://tiu-assets.s3-us-west-2.amazonaws.com/2018/12/Chyna-Barbell-Bent-Over-Row.gif" alt=""/>
+        <p className="leggy">Barbell Bent Over Rows</p>
+        </div>
 
 
+        <div className="gifText">    
+        <img className="lg1" src="https://www.sparkpeople.com/assets/exercises/Assisted-Pull-up-Machine.gif" alt=""/>
+        <p className="leggy">Assisted Pull Ups</p> 
+        </div>
 
+        <div className="gifText">
+          <img className="lg1"  src="https://thumbs.gfycat.com/RapidOrganicIsabellinewheatear-size_restricted.gif" alt=""/>
+          <p className="leggy">Hyperextensions</p>  
+        </div>
 
-
-
+        </div>
 
 
       <div className="back">
@@ -85,6 +81,6 @@ export const BackList = () => {
 
       </div>
       </div>
-    </>
+    </StyleRoot>
   )
 }

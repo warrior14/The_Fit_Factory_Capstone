@@ -3,6 +3,9 @@ import { ChestContext } from "./ChestProvider.js";
 import { ChestCard } from "./ChestCard.js";
 import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 import "./Chest.css"
+import { JelloAnimation } from "../animations/AnimationHelper";
+import {StyleRoot} from 'radium';
+
 
 
 export const ChestList = () => {
@@ -31,8 +34,8 @@ export const ChestList = () => {
 
 
   return (
-    <>
-    <div className="chestDiv">
+    <StyleRoot>
+    <div className="chestDiv" style={JelloAnimation(2)}>
 
 
   {exerciseModal}
@@ -90,6 +93,6 @@ export const ChestList = () => {
 
       </div>
       </div>
-    </>
+    </StyleRoot>
   )
 }

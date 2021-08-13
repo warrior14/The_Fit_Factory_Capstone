@@ -81,9 +81,10 @@ export const BundleAssociationList = () => {
                     <section className="bundle"> 
                       <h3 className="exercise__name">{bundleAssociation.exercise.name}</h3>
                       {/* <button className="deleteExerciseButton" onClick={() => {
-                          handleDeleteExercise()
+                          handleDeleteExercise(currentBundle.id, bundleAssociation.id)
                         }}><img className="trashIcon" src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button> */}
                         <button className="deleteExerciseButton" onClick={() => {
+                          alert("Exercise has been deleted!")
                           deleteExercise(currentBundle.id, bundleAssociation.id)
                           console.log(bundleAssociation.exercise)
                         }}><img className="trashIcon" src="https://img.icons8.com/plasticine/100/000000/full-trash.png"/></button>
