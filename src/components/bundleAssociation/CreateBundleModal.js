@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect }from "react";
 import { BundleAssociationContext } from "./BundleAssociationProvider";
 import "./BundleAssociation.css"
+import { LightSpeedInAnimation } from "../animations/AnimationHelper";
+import {StyleRoot} from 'radium';
 
 
 export const CreateBundleModal = ({setShowBundleModal}) => {
@@ -18,7 +20,8 @@ export const CreateBundleModal = ({setShowBundleModal}) => {
 
 
 return (
-    <div className="modal is-active">
+    <StyleRoot>
+    <div className="modal is-active" style={LightSpeedInAnimation(1)}>
     <div className="modal-background createBundleModal"></div>
     <div className="modal-content bundleForm">
         <h1 className="headerBundle">Create Your Workout Bundle!</h1>
@@ -40,6 +43,7 @@ return (
     <button onClick={() => {
             setShowBundleModal(false)}}className="modal-close is-large exitBundle" aria-label="close"></button>
     </div>
+    </StyleRoot>
 )
 
 

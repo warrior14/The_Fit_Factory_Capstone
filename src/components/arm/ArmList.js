@@ -3,6 +3,9 @@ import { ArmContext } from "./ArmProvider.js";
 import { ArmCard } from "./ArmCard.js";
 import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
 import "./Arm.css"
+import { JelloAnimation } from "../animations/AnimationHelper";
+import {StyleRoot} from 'radium';
+
 
 export const ArmList = () => {
 
@@ -27,8 +30,8 @@ export const ArmList = () => {
   }
 
   return (
-    <>
-    <div className="armDiv">
+    <StyleRoot>
+    <div className="armDiv" style={JelloAnimation(2)}>
       {exerciseModal}
       <h1 className="armHeader">Arm Exercises</h1>
 
@@ -80,6 +83,6 @@ export const ArmList = () => {
 
       </div>
       </div>
-    </>
+    </StyleRoot>
   )
 }

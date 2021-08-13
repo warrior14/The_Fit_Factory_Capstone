@@ -3,7 +3,8 @@ import { BundleAssociationContext } from "./BundleAssociationProvider.js";
 import { BundleCard } from "./BundleCard.js";
 import { CreateBundleModal } from "./CreateBundleModal"
 import "./BundleAssociation.css"
-
+import { JelloAnimation } from "../animations/AnimationHelper";
+import {StyleRoot} from 'radium';
 
 
 export const BundleList = () => {
@@ -25,8 +26,8 @@ export const BundleList = () => {
   }
 
   return (
-    <>
-    <div className="bundleDiv">
+    <StyleRoot>
+    <div className="bundleDiv" style={JelloAnimation(2)}>
       <h1 className="hero ac">Workout Bundles</h1>
       <button className="button is-rounded creationBundle  mayo" onClick={() => {
         setShowBundleModal(true);
@@ -42,6 +43,6 @@ export const BundleList = () => {
         }
       </div>
       </div>
-    </>
+    </StyleRoot>
   )
 }

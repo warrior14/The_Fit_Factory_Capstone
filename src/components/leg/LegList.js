@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { LegContext } from "./LegProvider.js";
 import { LegCard } from "./LegCard.js";
 import { AddExerciseModal } from "./../bundleAssociation/AddNewExerciseModal";
+import { JelloAnimation } from "../animations/AnimationHelper";
+import {StyleRoot} from 'radium';
+
 
 
 export const LegList = () => {
@@ -29,8 +32,8 @@ export const LegList = () => {
 
 
   return (
-    <>
-    <div className="legDivs">
+    <StyleRoot>
+    <div className="legDivs"  style={JelloAnimation(2)}>
       {exerciseModal}
 
       <h1 className="legHeader">Leg Exercises</h1>
@@ -78,6 +81,6 @@ export const LegList = () => {
 
       </div>
       </div>
-    </>
+    </StyleRoot>
   )
 }

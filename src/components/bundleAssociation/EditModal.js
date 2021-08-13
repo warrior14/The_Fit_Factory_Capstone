@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect }from "react";
 import { BundleAssociationContext } from "./BundleAssociationProvider"
-
+import { LightSpeedInAnimation } from "../animations/AnimationHelper";
+import {StyleRoot} from 'radium';
 
 export const EditModal = ({setShowEditModal, currentAssociation}) => {
 
@@ -20,7 +21,8 @@ export const EditModal = ({setShowEditModal, currentAssociation}) => {
 
     return (
 
-        <div className="modal is-active">
+        <StyleRoot>
+        <div className="modal is-active"  style={LightSpeedInAnimation(1)}>
         <div className="modal-background areYouSure"></div>
         <div className="modal-content sureBundle">
             <h1 className="headerBundle">Edit Exercise</h1>
@@ -69,5 +71,6 @@ export const EditModal = ({setShowEditModal, currentAssociation}) => {
             }}
             className="modal-close is-large exitBundle" aria-label="close"></button>
   </div>
+  </StyleRoot>
     )
 }
