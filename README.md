@@ -15,7 +15,7 @@ cd fitfactory-capstone
 
 **Note:** Your `database.json` file is already in the `.gitignore` file for this project, so it will never be added to the repo or pushed to Github.
 
-## What is The Fit Facotry?
+## What is The Fit Factory?
 The Fit Factory is a workout companion app that will educate and motivate someone who wants to start their fitness journey. As someone who has a passion for health and fitness, there is nothing I find more rewarding than helping someone transform their body and lifestyle for the better. Having more than a decade’s experience in personal training, the most common problems I encounter are that people don’t know the correct form for the exercises they are trying to do (which could lead to injury) and that they lack the motivation to stay disciplined on their workout regimen. These issues could hinder or deter their progress and make them revert to their unhealthy lifestyles. Although there are countless exercise apps out there, they can be very confusing, misleading and expensive. My free app will provide simple and easy to follow exercises that users can implement in their workout routine. In addition, it will display a timer/cooldown countdown for each exercise chosen that includes text to speech feature with Web Speech external API that will communicate with the user.
 
 
